@@ -1,6 +1,8 @@
 package kr.co.greetech.back.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import kr.co.greetech.back.Auditing.CreateTimeEntity;
+import kr.co.greetech.back.dto.MeasureDataDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,8 +11,9 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@ToString
-public class MeasureData {
+@Builder
+@ToString(exclude = {"dataLogger"})
+public class MeasureData extends CreateTimeEntity {
     @Id
     @GeneratedValue
     @Column(name = "MEASURE_DATA_ID")
@@ -23,6 +26,10 @@ public class MeasureData {
 
     @Column(nullable = false)
     String data;
+
+    public MeasureData(MeasureDataDto measureDataDto) {
+        data = measureDataDto.getData();
+    }
 
     public void setDataLogger(DataLogger dataLogger) {
         this.dataLogger = dataLogger;

@@ -1,6 +1,7 @@
 package kr.co.greetech.back.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import kr.co.greetech.back.Auditing.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -12,8 +13,9 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Builder
 @ToString
-public class Company {
+public class Company extends BaseTimeEntity {
     @Id
     @GeneratedValue
     @Column(name = "COMPANY_ID")

@@ -1,6 +1,7 @@
 package kr.co.greetech.back.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import kr.co.greetech.back.Auditing.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,8 +10,9 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Builder
 @ToString
-public class DataLogger {
+public class DataLogger extends BaseTimeEntity {
     @Id
     @GeneratedValue
     @Column(name = "DATA_LOGGER_ID")
@@ -20,6 +22,8 @@ public class DataLogger {
     @JoinColumn(name = "COMPANY_ID")
     @JsonIgnore
     Company company;
+
+    String modelName;
 
 //    Boolean isUpdate;
 
