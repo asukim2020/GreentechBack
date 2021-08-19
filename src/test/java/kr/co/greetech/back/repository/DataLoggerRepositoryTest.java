@@ -23,16 +23,12 @@ class DataLoggerRepositoryTest {
 
     @BeforeEach
     void beforeEach() {
-        Company company = Company.builder()
-                .name("company")
-                .build();
+        Company company = Company.create("company");
 
         companyRepository.save(company);
 
         for (int i = 0; i < 5; i++) {
-            DataLogger dataLogger = DataLogger.builder()
-                    .company(company)
-                    .build();
+            DataLogger dataLogger = DataLogger.create("dataLogger" + i, company);
 
             dataLoggerRepository.save(dataLogger);
         }

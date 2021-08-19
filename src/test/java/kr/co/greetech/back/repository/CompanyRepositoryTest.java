@@ -24,9 +24,7 @@ class CompanyRepositoryTest {
     void beforeEach() {
         System.out.println("CompanyRepositoryTest.beforeEach");
         for (int i = 0; i < 5; i++) {
-            Company company = Company.builder()
-                    .name("company" + i)
-                    .build();
+            Company company = Company.create("company" + i);
             companyRepository.save(company);
         }
     }

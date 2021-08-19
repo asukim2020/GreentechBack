@@ -1,18 +1,14 @@
 package kr.co.greetech.back.service;
 
-import kr.co.greetech.back.dto.DataLoggerDto;
+import kr.co.greetech.back.dto.DataLoggerCreateDto;
+import kr.co.greetech.back.dto.DataLoggerReadDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.repository.CompanyRepository;
 import kr.co.greetech.back.repository.DataLoggerRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,20 +35,18 @@ class DataLoggerServiceTest {
 
     @Test
     public void register() {
-        Company company = Company.builder()
-                .name("company")
-                .build();
+        Company company = Company.create("company");
         companyRepository.save(company);
 
-        Long dataLoggerId = dataLoggerService.register(company.getId(), new DataLoggerDto(null,"dataLogger"));
-        DataLoggerDto dataLoggerDto = dataLoggerService.findById(dataLoggerId);
-        assertThat(dataLoggerDto).isNotNull();
+        Long dataLoggerId = dataLoggerService.register(company.getId(), new DataLoggerCreateDto("dataLogger"));
+        DataLoggerReadDto dataLoggerReadDto = dataLoggerService.findById(dataLoggerId);
+        assertThat(dataLoggerReadDto).isNotNull();
     }
 
     @Test
-    public void registerException() {
+    public void IllegalRegister() {
         assertThrows(IllegalArgumentException.class, () -> {
-            dataLoggerService.register(-1L, new DataLoggerDto(null,"dataLogger"));
+            dataLoggerService.register(-1L, new DataLoggerCreateDto("dataLogger"));
         });
     }
 }

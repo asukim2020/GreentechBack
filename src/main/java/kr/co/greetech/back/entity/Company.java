@@ -12,8 +12,6 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
-@Builder
 @ToString
 public class Company extends BaseTimeEntity {
     @Id
@@ -30,4 +28,36 @@ public class Company extends BaseTimeEntity {
 //
 //    @JsonIgnore
 //    String loginPw;
+
+    private Company(String name) {
+        this.name = name;
+    }
+
+    public static Company create(String name) {
+        return new Company(name);
+    }
 }
+
+/*
+// JSON 형태
+[
+  {
+    "createdDate": "2021-08-19T10:46:53.375383",
+    "lastModifiedDate": "2021-08-19T10:46:53.375383",
+    "id": 1,
+    "name": "1234"
+  },
+  {
+    "createdDate": "2021-08-19T10:47:01.084938",
+    "lastModifiedDate": "2021-08-19T10:47:01.084938",
+    "id": 3,
+    "name": "12355"
+  },
+  {
+    "createdDate": "2021-08-19T10:47:04.734144",
+    "lastModifiedDate": "2021-08-19T10:47:04.734144",
+    "id": 4,
+    "name": "1235"
+  }
+]
+ */

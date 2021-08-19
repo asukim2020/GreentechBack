@@ -41,9 +41,7 @@ class MeasureDataServiceTest {
 
     @Test
     void addMeasureDataDtos() {
-        DataLogger dataLogger = DataLogger.builder()
-                .modelName("dataLogger")
-                .build();
+        DataLogger dataLogger = DataLogger.create("dataLogger", null);
         dataLoggerRepository.save(dataLogger);
 
         List<MeasureDataDto> measureDataDtos = new ArrayList<>();

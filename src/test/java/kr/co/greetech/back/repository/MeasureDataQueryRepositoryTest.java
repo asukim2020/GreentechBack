@@ -35,8 +35,7 @@ class MeasureDataQueryRepositoryTest {
 
     @BeforeEach
     void beforeEach() throws InterruptedException {
-        DataLogger dataLogger = DataLogger.builder()
-                .build();
+        DataLogger dataLogger = DataLogger.create("dataLogger", null);
         dataLoggerRepository.save(dataLogger);
 
         for (int i = 0; i < 5; i++) {

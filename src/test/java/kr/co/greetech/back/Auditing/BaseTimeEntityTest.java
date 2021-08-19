@@ -23,9 +23,7 @@ class BaseTimeEntityTest {
     @Test
     public void auditing() {
         String companyName = "company";
-        Company company = Company.builder()
-                .name(companyName)
-                .build();
+        Company company = Company.create(companyName);
         Company savedCompany = companyRepository.save(company);
         assertThat(savedCompany.getCreatedDate()).isNotNull();
         assertThat(savedCompany.getLastModifiedDate()).isNotNull();
@@ -33,9 +31,7 @@ class BaseTimeEntityTest {
         System.out.println("savedCompany.getCreatedDate() = " + savedCompany.getCreatedDate());
         System.out.println("savedCompany.getLastModifiedDate() = " + savedCompany.getLastModifiedDate());
 
-        DataLogger dataLogger = DataLogger.builder()
-                .company(savedCompany)
-                .build();
+        DataLogger dataLogger = DataLogger.create("dataLogger", savedCompany);
         DataLogger savedDataLogger = dataLoggerRepository.save(dataLogger);
         assertThat(savedDataLogger.getCreatedDate()).isNotNull();
         assertThat(savedDataLogger.getLastModifiedDate()).isNotNull();
