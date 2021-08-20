@@ -27,8 +27,8 @@ public class MeasureDataController {
     @GetMapping
     public List<MeasureDataDto> select(
             @RequestParam Long dataLoggerId,
-            @RequestParam Long start,
-            @RequestParam Long end
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime start,
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime end
     ) {
         return measureDataService.select(dataLoggerId, start, end);
     }

@@ -49,19 +49,19 @@ class MeasureDataServiceTest {
         List<MeasureDataDto> measureDataDtos = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             measureDataDtos.add(
-                    new MeasureDataDto("data")
+                    new MeasureDataDto("data", LocalDateTime.now())
             );
         }
         measureDataService.addMeasureDataDtos(dataLogger.getId(), measureDataDtos);
 
-        Long start = (System.currentTimeMillis() - (1000 * 3600 * 24));
-        Long end = System.currentTimeMillis();
+        LocalDateTime start = LocalDateTime.now().minusDays(1);
+        LocalDateTime end = LocalDateTime.now();
         List<MeasureDataDto> dataDtos = measureDataService.select(
                 dataLogger.getId(),
                 start,
                 end
         );
 
-        Assertions.assertThat(dataDtos.size()).isEqualTo(5);
+        Assertions.assertThat(dataDtos.size()).isGreaterThan(0);
     }
 }

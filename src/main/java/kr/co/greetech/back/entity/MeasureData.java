@@ -28,6 +28,7 @@ public class MeasureData extends CreateTimeEntity {
 
     public static MeasureData create(MeasureDataDto measureDataDto, DataLogger dataLogger) {
         MeasureData measureData = new MeasureData();
+        measureData.id = null;
         measureData.data = measureDataDto.getData();
         measureData.dataLogger = dataLogger;
         return measureData;

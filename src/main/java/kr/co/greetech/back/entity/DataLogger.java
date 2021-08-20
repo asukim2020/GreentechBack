@@ -29,13 +29,10 @@ public class DataLogger extends BaseTimeEntity {
 
     public static DataLogger create(DataLoggerCreateDto dataLoggerCreateDto, Company company) {
         DataLogger dataLogger = new DataLogger();
+        dataLogger.id = null;
         dataLogger.modelName = dataLoggerCreateDto.getModelName();
         dataLogger.company = company;
 
         return dataLogger;
     }
-
-//    public void setCompany(Company company) {
-//        this.company = company;
-//    }
 }

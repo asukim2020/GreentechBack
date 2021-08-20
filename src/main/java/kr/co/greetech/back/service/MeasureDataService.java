@@ -40,8 +40,8 @@ public class MeasureDataService {
 
     public List<MeasureDataDto> select(
             Long dataLoggerId,
-            Long start,
-            Long end
+            LocalDateTime start,
+            LocalDateTime end
     ) {
         return measureDataQueryRepository.search(
                 dataLoggerId,

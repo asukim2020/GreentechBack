@@ -11,24 +11,7 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 @Getter
-public class BaseTimeEntity {
-
-    @CreatedDate
-    @Column(updatable = false)
-    private Long createdTime;
-
+public class BaseTimeEntity extends CreateTimeEntity {
     @LastModifiedDate
-    private Long lastModifiedTime;
-
-    @PrePersist
-    public void before() {
-        Long time = System.currentTimeMillis();
-        createdTime = time;
-        lastModifiedTime = time;
-    }
-
-    @PreUpdate
-    public void always() {
-        lastModifiedTime = System.currentTimeMillis();
-    }
+    private LocalDateTime lastModifiedTime;
 }

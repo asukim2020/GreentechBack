@@ -1,9 +1,12 @@
 package kr.co.greetech.back.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.MeasureDataDto;
 import kr.co.greetech.back.entity.DataLogger;
+import kr.co.greetech.back.entity.MeasureData;
+import kr.co.greetech.back.repository.MeasureDataRepository;
 import kr.co.greetech.back.service.MeasureDataService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -79,22 +82,37 @@ class MeasureDataControllerTest {
 
         List<MeasureDataDto> dataDtos = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            dataDtos.add(new MeasureDataDto("data" + i));
+            dataDtos.add(new MeasureDataDto("data" + i, LocalDateTime.now()));
         }
         measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
 
-        Long start = System.currentTimeMillis() - (1000 * 3600 * 24);
-        Long end = System.currentTimeMillis();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSS", Locale.KOREA);
+        LocalDateTime start = LocalDateTime.now().minusDays(1L);
+        LocalDateTime end = LocalDateTime.now().plusDays(1L);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
         MvcResult result = mockMvc.perform(get("/measureData")
                 .param("dataLoggerId", dataLoggerId.toString())
-                .param("start", start.toString())
-                .param("end", end.toString())
+                .param("start", formatter.format(start))
+                .param("end", formatter.format(end))
         ).andExpect(status().isOk())
                 .andReturn();
 
         String jsonString = result.getResponse().getContentAsString();
-        List<MeasureDataDto> measureDataDtos = mapper.readValue(jsonString, List.class);
+//        MeasureDataDto[] measureDataDtos = mapper.readValue(jsonString, MeasureDataDto[].class);
+        List<MeasureDataDto> measureDataDtos = mapper.readValue(jsonString, new TypeReference<>() {});
+
+        System.out.println("formatter.format(start) = " + formatter.format(start));
+        System.out.println("formatter.format(end) = " + formatter.format(end));
+
+        for (MeasureDataDto measureDataDto : measureDataDtos) {
+            System.out.println("measureDataDto = " + measureDataDto);
+        }
+
+//        for (MeasureDataDto measureDataDto : measureDataDtos) {
+//            System.out.println("measureDataDto = " + measureDataDto);
+//        }
+
         assertThat(measureDataDtos.size()).isEqualTo(5);
+//        assertThat(measureDataDtos.length).isEqualTo(5);
     }
 }

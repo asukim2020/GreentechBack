@@ -1,6 +1,5 @@
 package kr.co.greetech.back.repository;
 
-import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import kr.co.greetech.back.dto.MeasureDataDto;
@@ -24,18 +23,18 @@ public class MeasureDataQueryRepository {
 
     public List<MeasureDataDto> search(
             Long dataLoggerId,
-            Long start,
-            Long end
+            LocalDateTime start,
+            LocalDateTime end
     ) {
         return queryFactory
                 .select(new QMeasureDataDto(
-                        measureData.data
+                        measureData.data,
+                        measureData.createdTime
                 ))
                 .from(measureData)
                 .where(
                         dataLoggerEq(dataLoggerId),
-                        timeGoe(start),
-                        timeLoe(end)
+                        crateTimeBetween(start, end)
                 ).orderBy(measureData.createdTime.asc())
                 .limit(1000)
                 .fetch();
@@ -45,11 +44,7 @@ public class MeasureDataQueryRepository {
         return measureData.dataLogger.id.eq(dataLoggerId);
     }
 
-    private BooleanExpression timeGoe(Long start) {
-        return measureData.createdTime.goe(start);
-    }
-
-    private Predicate timeLoe(Long end) {
-        return measureData.createdTime.loe(end);
+    private BooleanExpression crateTimeBetween(LocalDateTime start, LocalDateTime end) {
+        return measureData.createdTime.between(start, end);
     }
 }

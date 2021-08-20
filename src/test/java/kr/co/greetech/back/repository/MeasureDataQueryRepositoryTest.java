@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -43,7 +44,7 @@ class MeasureDataQueryRepositoryTest {
 
         for (int i = 0; i < 5; i++) {
             Thread.sleep(10);
-            MeasureData measureData = MeasureData.create(new MeasureDataDto("data"), dataLogger);
+            MeasureData measureData = MeasureData.create(new MeasureDataDto("data", LocalDateTime.now()), dataLogger);
             measureDataRepository.save(measureData);
         }
     }
@@ -54,8 +55,8 @@ class MeasureDataQueryRepositoryTest {
         DataLogger dataLogger = dataLoggers.get(0);
         List<MeasureDataDto> dataDtos = measureDataQueryRepository.search(
                 dataLogger.getId(),
-                System.currentTimeMillis() - (1000 * 3600 * 24),
-                System.currentTimeMillis()
+                LocalDateTime.now().minusDays(1),
+                LocalDateTime.now()
         );
 
         for (MeasureDataDto dataDto : dataDtos) {

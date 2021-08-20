@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -43,7 +45,7 @@ class BaseTimeEntityTest {
         System.out.println("savedDataLogger.getCreatedTime() = " + savedDataLogger.getCreatedTime());
         System.out.println("savedDataLogger.getLastModifiedTime() = " + savedDataLogger.getLastModifiedTime());
 
-        MeasureData measureData = MeasureData.create(new MeasureDataDto("data"), dataLogger);
+        MeasureData measureData = MeasureData.create(new MeasureDataDto("data", LocalDateTime.now()), dataLogger);
         MeasureData savedMeasureData = measureDataRepository.save(measureData);
         assertThat(savedMeasureData.getCreatedTime()).isNotNull();
 
