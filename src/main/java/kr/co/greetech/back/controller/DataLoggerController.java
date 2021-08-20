@@ -3,8 +3,10 @@ package kr.co.greetech.back.controller;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import kr.co.greetech.back.service.DataLoggerService;
+import kr.co.greetech.back.util.ExceptionMsg;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +23,14 @@ public class DataLoggerController {
     @PostMapping("/{companyId}")
     public Long create(
             @PathVariable Long companyId,
-            @Validated DataLoggerCreateDto dataLoggerCreateDto
+            @Validated DataLoggerCreateDto dataLoggerCreateDto,
+            BindingResult bindingResult
     ) {
+        if (bindingResult.hasErrors()) {
+            log.warn("error={} ", bindingResult);
+            throw new IllegalArgumentException(ExceptionMsg.bindingMsg(bindingResult));
+        }
+
         return dataLoggerService.register(companyId, dataLoggerCreateDto);
     }
 
