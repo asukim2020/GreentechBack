@@ -1,5 +1,6 @@
 package kr.co.greetech.back.service;
 
+import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import kr.co.greetech.back.entity.Company;
@@ -35,7 +36,7 @@ class DataLoggerServiceTest {
 
     @Test
     public void register() {
-        Company company = Company.create("company");
+        Company company = Company.create(new CompanyCreateDto("company"));
         companyRepository.save(company);
 
         Long dataLoggerId = dataLoggerService.register(company.getId(), new DataLoggerCreateDto("dataLogger"));

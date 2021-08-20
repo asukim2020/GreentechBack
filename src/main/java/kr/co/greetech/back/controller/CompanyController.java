@@ -27,7 +27,7 @@ public class CompanyController {
             throw new IllegalArgumentException(ExceptionMsg.bindingMsg(bindingResult));
         }
 
-        Company company = Company.create(companyCreateDto.getName());
+        Company company = Company.create(companyCreateDto);
         companyRepository.save(company);
         return company.getId();
     }

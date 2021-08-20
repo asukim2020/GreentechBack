@@ -1,5 +1,7 @@
 package kr.co.greetech.back.controller;
 
+import kr.co.greetech.back.dto.CompanyCreateDto;
+import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.entity.DataLogger;
 import org.junit.jupiter.api.Test;
@@ -43,13 +45,12 @@ class DataLoggerControllerTest {
 
         mockMvc.perform(post("/dataLogger/{companyId}", companyId)
                 .param("modelName", "dataLogger"))
-                .andExpect(status().isOk())
-                .andReturn();
+                .andExpect(status().isOk());
     }
 
     @Test
     void one() throws Exception {
-        DataLogger dataLogger = DataLogger.create("dataLogger", null);
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
         em.persist(dataLogger);
         Long dataLoggerId = dataLogger.getId();
 
@@ -60,13 +61,13 @@ class DataLoggerControllerTest {
 
     @Test
     void list() throws Exception {
-        Company company = Company.create("company");
+        Company company = Company.create(new CompanyCreateDto("company"));
         em.persist(company);
         Long companyId = company.getId();
 
-        em.persist(DataLogger.create("dataLogger", null));
-        em.persist(DataLogger.create("dataLogger", null));
-        em.persist(DataLogger.create("dataLogger", null));
+        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger"), null));
+        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger"), null));
+        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger"), null));
 
         mockMvc.perform(get("/dataLogger/{companyId}", companyId))
                 .andExpect(status().isOk());

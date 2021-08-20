@@ -28,11 +28,10 @@ public class MeasureDataService {
 
         DataLogger dataLogger = optionalDataLogger.get();
         List<MeasureData> measureDatas = measureDataDtos.stream()
-                .map(MeasureData::new)
+                .map(measureDataDto -> MeasureData.create(measureDataDto, dataLogger))
                 .collect(Collectors.toList());
 
         for (MeasureData measureData : measureDatas) {
-            measureData.setDataLogger(dataLogger);
             measureDataRepository.save(measureData);
         }
 
@@ -41,8 +40,8 @@ public class MeasureDataService {
 
     public List<MeasureDataDto> select(
             Long dataLoggerId,
-            LocalDateTime start,
-            LocalDateTime end
+            Long start,
+            Long end
     ) {
         return measureDataQueryRepository.search(
                 dataLoggerId,

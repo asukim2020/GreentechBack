@@ -2,6 +2,7 @@ package kr.co.greetech.back.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.co.greetech.back.Auditing.BaseTimeEntity;
+import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import lombok.*;
 
@@ -26,9 +27,9 @@ public class DataLogger extends BaseTimeEntity {
 
 //    Boolean isUpdate;
 
-    public static DataLogger create(String modelName, Company company) {
+    public static DataLogger create(DataLoggerCreateDto dataLoggerCreateDto, Company company) {
         DataLogger dataLogger = new DataLogger();
-        dataLogger.modelName = modelName;
+        dataLogger.modelName = dataLoggerCreateDto.getModelName();
         dataLogger.company = company;
 
         return dataLogger;

@@ -24,8 +24,8 @@ public class MeasureDataQueryRepository {
 
     public List<MeasureDataDto> search(
             Long dataLoggerId,
-            LocalDateTime start,
-            LocalDateTime end
+            Long start,
+            Long end
     ) {
         return queryFactory
                 .select(new QMeasureDataDto(
@@ -36,7 +36,7 @@ public class MeasureDataQueryRepository {
                         dataLoggerEq(dataLoggerId),
                         timeGoe(start),
                         timeLoe(end)
-                ).orderBy(measureData.createdDate.asc())
+                ).orderBy(measureData.createdTime.asc())
                 .limit(1000)
                 .fetch();
     }
@@ -45,11 +45,11 @@ public class MeasureDataQueryRepository {
         return measureData.dataLogger.id.eq(dataLoggerId);
     }
 
-    private BooleanExpression timeGoe(LocalDateTime start) {
-        return measureData.createdDate.goe(start);
+    private BooleanExpression timeGoe(Long start) {
+        return measureData.createdTime.goe(start);
     }
 
-    private Predicate timeLoe(LocalDateTime end) {
-        return measureData.createdDate.loe(end);
+    private Predicate timeLoe(Long end) {
+        return measureData.createdTime.loe(end);
     }
 }

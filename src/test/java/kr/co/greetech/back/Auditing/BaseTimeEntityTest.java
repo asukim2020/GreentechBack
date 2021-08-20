@@ -1,5 +1,8 @@
 package kr.co.greetech.back.Auditing;
 
+import kr.co.greetech.back.dto.CompanyCreateDto;
+import kr.co.greetech.back.dto.DataLoggerCreateDto;
+import kr.co.greetech.back.dto.MeasureDataDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.entity.DataLogger;
 import kr.co.greetech.back.entity.MeasureData;
@@ -9,11 +12,12 @@ import kr.co.greetech.back.repository.MeasureDataRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional
 class BaseTimeEntityTest {
 
     @Autowired CompanyRepository companyRepository;
@@ -23,29 +27,26 @@ class BaseTimeEntityTest {
     @Test
     public void auditing() {
         String companyName = "company";
-        Company company = Company.create(companyName);
+        Company company = Company.create(new CompanyCreateDto(companyName));
         Company savedCompany = companyRepository.save(company);
-        assertThat(savedCompany.getCreatedDate()).isNotNull();
-        assertThat(savedCompany.getLastModifiedDate()).isNotNull();
+        assertThat(savedCompany.getCreatedTime()).isNotNull();
+        assertThat(savedCompany.getLastModifiedTime()).isNotNull();
 
-        System.out.println("savedCompany.getCreatedDate() = " + savedCompany.getCreatedDate());
-        System.out.println("savedCompany.getLastModifiedDate() = " + savedCompany.getLastModifiedDate());
+        System.out.println("savedCompany.getCreatedTime() = " + savedCompany.getCreatedTime());
+        System.out.println("savedCompany.getLastModifiedTime() = " + savedCompany.getLastModifiedTime());
 
-        DataLogger dataLogger = DataLogger.create("dataLogger", savedCompany);
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), savedCompany);
         DataLogger savedDataLogger = dataLoggerRepository.save(dataLogger);
-        assertThat(savedDataLogger.getCreatedDate()).isNotNull();
-        assertThat(savedDataLogger.getLastModifiedDate()).isNotNull();
+        assertThat(savedDataLogger.getCreatedTime()).isNotNull();
+        assertThat(savedDataLogger.getLastModifiedTime()).isNotNull();
 
-        System.out.println("savedDataLogger.getCreatedDate() = " + savedDataLogger.getCreatedDate());
-        System.out.println("savedDataLogger.getLastModifiedDate() = " + savedDataLogger.getLastModifiedDate());
+        System.out.println("savedDataLogger.getCreatedTime() = " + savedDataLogger.getCreatedTime());
+        System.out.println("savedDataLogger.getLastModifiedTime() = " + savedDataLogger.getLastModifiedTime());
 
-        MeasureData measureData = MeasureData.builder()
-                .data("data")
-                .dataLogger(savedDataLogger)
-                .build();
+        MeasureData measureData = MeasureData.create(new MeasureDataDto("data"), dataLogger);
         MeasureData savedMeasureData = measureDataRepository.save(measureData);
-        assertThat(savedMeasureData.getCreatedDate()).isNotNull();
+        assertThat(savedMeasureData.getCreatedTime()).isNotNull();
 
-        System.out.println("savedMeasureData.getCreatedDate() = " + savedMeasureData.getCreatedDate());
+        System.out.println("savedMeasureData.getCreatedTime() = " + savedMeasureData.getCreatedTime());
     }
 }

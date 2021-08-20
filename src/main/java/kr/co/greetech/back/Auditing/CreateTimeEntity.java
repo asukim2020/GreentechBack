@@ -7,7 +7,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
-import java.time.LocalDateTime;
+import javax.persistence.PrePersist;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
@@ -15,5 +15,10 @@ import java.time.LocalDateTime;
 public class CreateTimeEntity {
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime createdDate;
+    private Long createdTime;
+
+    @PrePersist
+    public void before() {
+        createdTime = System.currentTimeMillis();
+    }
 }

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Builder
 @ToString(exclude = {"dataLogger"})
 public class MeasureData extends CreateTimeEntity {
     @Id
@@ -27,11 +26,10 @@ public class MeasureData extends CreateTimeEntity {
     @Column(nullable = false)
     String data;
 
-    public MeasureData(MeasureDataDto measureDataDto) {
-        data = measureDataDto.getData();
-    }
-
-    public void setDataLogger(DataLogger dataLogger) {
-        this.dataLogger = dataLogger;
+    public static MeasureData create(MeasureDataDto measureDataDto, DataLogger dataLogger) {
+        MeasureData measureData = new MeasureData();
+        measureData.data = measureDataDto.getData();
+        measureData.dataLogger = dataLogger;
+        return measureData;
     }
 }

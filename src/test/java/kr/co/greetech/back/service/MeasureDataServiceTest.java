@@ -1,5 +1,6 @@
 package kr.co.greetech.back.service;
 
+import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.MeasureDataDto;
 import kr.co.greetech.back.entity.DataLogger;
 import kr.co.greetech.back.entity.MeasureData;
@@ -10,6 +11,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDateTime;
@@ -41,22 +43,23 @@ class MeasureDataServiceTest {
 
     @Test
     void addMeasureDataDtos() {
-        DataLogger dataLogger = DataLogger.create("dataLogger", null);
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
         dataLoggerRepository.save(dataLogger);
 
         List<MeasureDataDto> measureDataDtos = new ArrayList<>();
-
         for (int i = 0; i < 5; i++) {
             measureDataDtos.add(
-                    new MeasureDataDto("1234")
+                    new MeasureDataDto("data")
             );
         }
-
         measureDataService.addMeasureDataDtos(dataLogger.getId(), measureDataDtos);
+
+        Long start = (System.currentTimeMillis() - (1000 * 3600 * 24));
+        Long end = System.currentTimeMillis();
         List<MeasureDataDto> dataDtos = measureDataService.select(
                 dataLogger.getId(),
-                LocalDateTime.now().minusDays(1),
-                LocalDateTime.now()
+                start,
+                end
         );
 
         Assertions.assertThat(dataDtos.size()).isEqualTo(5);

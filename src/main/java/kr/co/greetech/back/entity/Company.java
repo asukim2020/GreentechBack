@@ -2,6 +2,7 @@ package kr.co.greetech.back.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.co.greetech.back.Auditing.BaseTimeEntity;
+import kr.co.greetech.back.dto.CompanyCreateDto;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -33,8 +34,8 @@ public class Company extends BaseTimeEntity {
         this.name = name;
     }
 
-    public static Company create(String name) {
-        return new Company(name);
+    public static Company create(CompanyCreateDto companyCreateDto) {
+        return new Company(companyCreateDto.getName());
     }
 }
 

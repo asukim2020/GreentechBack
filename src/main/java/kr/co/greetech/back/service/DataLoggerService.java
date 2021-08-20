@@ -27,7 +27,7 @@ public class DataLoggerService {
 
         Company company = optionalCompany.get();
         DataLogger dataLogger = DataLogger.create(
-                dataLoggerDto.getModelName(),
+                dataLoggerDto,
                 company
         );
         DataLogger savedDataLogger = dataLoggerRepository.save(dataLogger);

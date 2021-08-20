@@ -1,5 +1,6 @@
 package kr.co.greetech.back.repository;
 
+import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.entity.Company;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +25,7 @@ class CompanyRepositoryTest {
     void beforeEach() {
         System.out.println("CompanyRepositoryTest.beforeEach");
         for (int i = 0; i < 5; i++) {
-            Company company = Company.create("company" + i);
+            Company company = Company.create(new CompanyCreateDto("company" + i));
             companyRepository.save(company);
         }
     }

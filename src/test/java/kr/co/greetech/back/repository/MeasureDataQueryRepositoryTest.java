@@ -1,5 +1,6 @@
 package kr.co.greetech.back.repository;
 
+import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.MeasureDataDto;
 import kr.co.greetech.back.entity.DataLogger;
 import kr.co.greetech.back.entity.MeasureData;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
@@ -19,6 +21,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional
 class MeasureDataQueryRepositoryTest {
 
     @Autowired
@@ -35,15 +38,12 @@ class MeasureDataQueryRepositoryTest {
 
     @BeforeEach
     void beforeEach() throws InterruptedException {
-        DataLogger dataLogger = DataLogger.create("dataLogger", null);
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
         dataLoggerRepository.save(dataLogger);
 
         for (int i = 0; i < 5; i++) {
             Thread.sleep(10);
-            MeasureData measureData = MeasureData.builder()
-                    .data("1234")
-                    .dataLogger(dataLogger)
-                    .build();
+            MeasureData measureData = MeasureData.create(new MeasureDataDto("data"), dataLogger);
             measureDataRepository.save(measureData);
         }
     }
@@ -54,8 +54,8 @@ class MeasureDataQueryRepositoryTest {
         DataLogger dataLogger = dataLoggers.get(0);
         List<MeasureDataDto> dataDtos = measureDataQueryRepository.search(
                 dataLogger.getId(),
-                LocalDateTime.now().minusDays(1),
-                LocalDateTime.now()
+                System.currentTimeMillis() - (1000 * 3600 * 24),
+                System.currentTimeMillis()
         );
 
         for (MeasureDataDto dataDto : dataDtos) {
