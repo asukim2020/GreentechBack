@@ -14,27 +14,27 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@Transactional
+@DataJpaTest
 class MeasureDataQueryRepositoryTest {
 
-    @Autowired
+    EntityManager em;
+
     DataLoggerRepository dataLoggerRepository;
-
-    @Autowired
     MeasureDataRepository measureDataRepository;
-
-    @Autowired
     MeasureDataQueryRepository measureDataQueryRepository;
 
     @Autowired
-    EntityManager em;
+    public MeasureDataQueryRepositoryTest(EntityManager em, DataLoggerRepository dataLoggerRepository, MeasureDataRepository measureDataRepository) {
+        this.em = em;
+        this.dataLoggerRepository = dataLoggerRepository;
+        this.measureDataRepository = measureDataRepository;
+        measureDataQueryRepository = new MeasureDataQueryRepository(em);
+    }
 
     @BeforeEach
     void beforeEach() throws InterruptedException {
