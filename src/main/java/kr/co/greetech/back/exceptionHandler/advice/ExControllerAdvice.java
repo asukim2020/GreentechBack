@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExControllerAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(IllegalArgumentException.class)
+    @ExceptionHandler
     public ErrorResult illegalArgumentExHandler(IllegalArgumentException e) {
         log.error("[illegalArgumentExHandler] ex", e);
         return new ErrorResult("illegal argument", e.getMessage());

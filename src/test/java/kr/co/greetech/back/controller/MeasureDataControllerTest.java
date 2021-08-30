@@ -24,10 +24,7 @@ import javax.persistence.EntityManager;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,31 +48,35 @@ class MeasureDataControllerTest {
 
     ObjectMapper mapper = new ObjectMapper();
 
-//    @Test
-//    void add() throws Exception {
-//        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
-//        em.persist(dataLogger);
-//        Long dataLoggerId = dataLogger.getId();
-//
-//        List<MeasureDataDto> dataDtos = new ArrayList<>();
-//        for (int i = 0; i < 5; i++) {
-//            dataDtos.add(new MeasureDataDto("data" + i));
-//        }
-//
-//        String jsonString = mapper.writeValueAsString(dataDtos);
-//        mockMvc.perform(post("/measureData/{dataLoggerId}", dataLoggerId)
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(jsonString)
-//        ).andExpect(status().isOk());
-//
-//        Long start = System.currentTimeMillis() - (1000 * 3600 * 24);
-//        Long end = System.currentTimeMillis();
-//        List<MeasureDataDto> dtos = measureDataService.select(dataLoggerId, start, end);
-//        assertThat(dtos.size()).isEqualTo(5);
-//    }
+    @Test
+    void add() throws Exception {
+        // given
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
+        em.persist(dataLogger);
+        Long dataLoggerId = dataLogger.getId();
+
+        List<MeasureDataDto> dataDtos = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            dataDtos.add(new MeasureDataDto("data" + i, LocalDateTime.now()));
+        }
+
+        // when
+        String jsonString = mapper.writeValueAsString(dataDtos);
+        mockMvc.perform(post("/measureData/{dataLoggerId}", dataLoggerId)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(jsonString)
+        ).andExpect(status().isOk());
+
+        // then
+        LocalDateTime start = LocalDateTime.now().minusDays(1L);
+        LocalDateTime end = LocalDateTime.now().plusDays(1L);
+        List<MeasureDataDto> dtos = measureDataService.select(dataLoggerId, start, end);
+        assertThat(dtos.size()).isGreaterThan(0);
+    }
 
     @Test
     void select() throws Exception {
+        // given
         DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
         em.persist(dataLogger);
         Long dataLoggerId = dataLogger.getId();
@@ -86,33 +87,43 @@ class MeasureDataControllerTest {
         }
         measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
 
+        //when
         LocalDateTime start = LocalDateTime.now().minusDays(1L);
         LocalDateTime end = LocalDateTime.now().plusDays(1L);
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
-        MvcResult result = mockMvc.perform(get("/measureData")
+
+        MvcResult response = mockMvc.perform(get("/measureData")
                 .param("dataLoggerId", dataLoggerId.toString())
                 .param("start", formatter.format(start))
                 .param("end", formatter.format(end))
         ).andExpect(status().isOk())
                 .andReturn();
 
-        String jsonString = result.getResponse().getContentAsString();
-//        MeasureDataDto[] measureDataDtos = mapper.readValue(jsonString, MeasureDataDto[].class);
-        List<MeasureDataDto> measureDataDtos = mapper.readValue(jsonString, new TypeReference<>() {});
+        // then
+        String jsonString = response.getResponse().getContentAsString();
+        Result result = mapper.readValue(jsonString, new TypeReference<>() {});
+        List<MeasureDataDto> measureDataDtos = result.data;
+        assertThat(measureDataDtos.size()).isGreaterThan(0);
+    }
 
-        System.out.println("formatter.format(start) = " + formatter.format(start));
-        System.out.println("formatter.format(end) = " + formatter.format(end));
+    static class Result {
+        private int count;
+        private List<MeasureDataDto> data;
 
-        for (MeasureDataDto measureDataDto : measureDataDtos) {
-            System.out.println("measureDataDto = " + measureDataDto);
+        public int getCount() {
+            return count;
         }
 
-//        for (MeasureDataDto measureDataDto : measureDataDtos) {
-//            System.out.println("measureDataDto = " + measureDataDto);
-//        }
+        public void setCount(int count) {
+            this.count = count;
+        }
 
-        assertThat(measureDataDtos.size()).isEqualTo(5);
-//        assertThat(measureDataDtos.length).isEqualTo(5);
+        public List<MeasureDataDto> getData() {
+            return data;
+        }
+
+        public void setData(List<MeasureDataDto> data) {
+            this.data = data;
+        }
     }
 }

@@ -36,7 +36,7 @@ public class MeasureDataQueryRepository {
                         dataLoggerEq(dataLoggerId),
                         crateTimeBetween(start, end)
                 ).orderBy(measureData.createdTime.asc())
-                .limit(1000)
+                .limit(500)
                 .fetch();
     }
 
