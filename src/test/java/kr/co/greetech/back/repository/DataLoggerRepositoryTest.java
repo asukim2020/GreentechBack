@@ -25,7 +25,7 @@ class DataLoggerRepositoryTest {
 
     @BeforeEach
     void beforeEach() {
-        Company company = Company.create(new CompanyCreateDto("company"));
+        Company company = Company.create(new CompanyCreateDto("company", "abcdef", "abcdefg1!"));
 
         companyRepository.save(company);
 

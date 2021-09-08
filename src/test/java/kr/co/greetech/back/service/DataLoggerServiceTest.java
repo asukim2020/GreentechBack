@@ -36,7 +36,7 @@ class DataLoggerServiceTest {
 
     @Test
     public void register() {
-        Company company = Company.create(new CompanyCreateDto("company"));
+        Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
         companyRepository.save(company);
 
         Long dataLoggerId = dataLoggerService.register(company.getId(), new DataLoggerCreateDto("dataLogger"));

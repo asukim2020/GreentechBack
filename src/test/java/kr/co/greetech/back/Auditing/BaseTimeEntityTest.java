@@ -29,7 +29,7 @@ class BaseTimeEntityTest {
     @Test
     public void auditing() {
         String companyName = "company";
-        Company company = Company.create(new CompanyCreateDto(companyName));
+        Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
         Company savedCompany = companyRepository.save(company);
         assertThat(savedCompany.getCreatedTime()).isNotNull();
         assertThat(savedCompany.getLastModifiedTime()).isNotNull();

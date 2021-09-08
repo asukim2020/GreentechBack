@@ -61,7 +61,7 @@ class DataLoggerControllerTest {
 
     @Test
     void list() throws Exception {
-        Company company = Company.create(new CompanyCreateDto("company"));
+        Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
         em.persist(company);
         Long companyId = company.getId();
 

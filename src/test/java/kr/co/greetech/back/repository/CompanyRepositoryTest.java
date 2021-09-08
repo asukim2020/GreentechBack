@@ -25,7 +25,7 @@ class CompanyRepositoryTest {
     void beforeEach() {
         System.out.println("CompanyRepositoryTest.beforeEach");
         for (int i = 0; i < 5; i++) {
-            Company company = Company.create(new CompanyCreateDto("company" + i));
+            Company company = Company.create(new CompanyCreateDto("company" + i, "abcdefg" + i, "abcdefg1!"));
             companyRepository.save(company);
         }
     }

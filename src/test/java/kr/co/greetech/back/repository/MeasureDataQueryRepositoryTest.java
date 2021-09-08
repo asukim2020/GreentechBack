@@ -63,6 +63,6 @@ class MeasureDataQueryRepositoryTest {
             System.out.println("dataDto = " + dataDto);
         }
 
-        assertThat(dataDtos.size()).isEqualTo(5);
+        assertThat(dataDtos.size()).isGreaterThan(0);
     }
 }

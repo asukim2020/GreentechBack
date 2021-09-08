@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/dataLogger")
+@CrossOrigin
 public class DataLoggerController {
 
     private final DataLoggerService dataLoggerService;

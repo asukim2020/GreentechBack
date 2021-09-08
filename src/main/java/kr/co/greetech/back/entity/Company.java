@@ -23,19 +23,19 @@ public class Company extends BaseTimeEntity {
     @Column(unique = true)
     String name;
 
-//    @JsonIgnore
-//    @Column(unique = true)
-//    String loginId;
-//
-//    @JsonIgnore
-//    String loginPw;
+    @Column(unique = true)
+    String loginId;
 
-    private Company(String name) {
-        this.name = name;
+    String loginPw;
+
+    private Company(CompanyCreateDto companyCreateDto) {
+        name = companyCreateDto.getName();
+        loginId = companyCreateDto.getLoginId();
+        loginPw = companyCreateDto.getLoginPw();
     }
 
     public static Company create(CompanyCreateDto companyCreateDto) {
-        return new Company(companyCreateDto.getName());
+        return new Company(companyCreateDto);
     }
 }
 

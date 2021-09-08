@@ -49,4 +49,11 @@ public class MeasureDataService {
                 end
         );
     }
+
+    // TODO: - test 코드 => 지울 것
+    public List<MeasureData> selectAll(
+            Long dataLoggerId
+    ) {
+        return measureDataRepository.findAllByDataLoggerId(dataLoggerId);
+    }
 }
