@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.co.greetech.back.service.MeasureDataServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-08T01:10:23" hostname="LAPTOP-JLJ2VI1H" time="0.02">
+  <properties/>
+  <testcase name="addMeasureDataDtos()" classname="kr.co.greetech.back.service.MeasureDataServiceTest" time="0.02"/>
+  <system-out><![CDATA[2021-09-08 10:10:23.035  INFO 12984 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [kr.co.greetech.back.service.MeasureDataServiceTest], using SpringBootContextLoader
+2021-09-08 10:10:23.035  INFO 12984 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [kr.co.greetech.back.service.MeasureDataServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-09-08 10:10:23.035  INFO 12984 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [kr.co.greetech.back.service.MeasureDataServiceTest]: MeasureDataServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-09-08 10:10:23.035  INFO 12984 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration kr.co.greetech.back.BackApplication for test class kr.co.greetech.back.service.MeasureDataServiceTest
+2021-09-08 10:10:23.051  INFO 12984 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-09-08 10:10:23.051  INFO 12984 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1392dc30, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@372265b2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@572e3752, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4e6db55, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@110e4a5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@253b1ec0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3092992, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@318776d5, org.springframework.test.context.event.EventPublishingTestExecutionListener@3734898c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4a044cb4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@8bb9df, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@ab046c5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@19dbc6f6, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@71d25895, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2c4a4231]
+2021-09-08 10:10:23.051  INFO 12984 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7f82ce18 testClass = MeasureDataServiceTest, testInstance = kr.co.greetech.back.service.MeasureDataServiceTest@657f4f8a, testMethod = addMeasureDataDtos@MeasureDataServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@336b42e5 testClass = MeasureDataServiceTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@39e54119, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@31e00b85, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1ea682c1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@234cb822, [ImportsContextCustomizer@3787aee1 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2f51503c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3e2388eb, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@694d7f7f]; rollback [true]
+2021-09-08 10:10:23.051 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-09-08 10:10:23.051 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-09-08 10:10:23.051 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-09-08 10:10:23.051 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-09-08 10:10:23.051 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-09-08 10:10:23.051 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert kr.co.greetech.back.entity.DataLogger
+        */ insert 
+        into
+            data_logger
+            (created_time, last_modified_time, company_id, model_name, data_logger_id) 
+        values
+            (?, ?, ?, ?, ?)
+Hibernate: 
+    /* insert kr.co.greetech.back.entity.DataLogger
+        */ insert 
+        into
+            data_logger
+            (created_time, last_modified_time, company_id, model_name, data_logger_id) 
+        values
+            (?, ?, ?, ?, ?)
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+Hibernate: 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+Hibernate: 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+Hibernate: 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+Hibernate: 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+Hibernate: 
+    /* insert kr.co.greetech.back.entity.MeasureData
+        */ insert 
+        into
+            measure_data
+            (created_time, data, data_logger_id, measure_data_id) 
+        values
+            (?, ?, ?, ?)
+2021-09-08 10:10:23.066 DEBUG 12984 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        measureData.data,
+        measureData.createdTime 
+    from
+        MeasureData measureData 
+    where
+        measureData.dataLogger.id = ?1 
+        and measureData.createdTime between ?2 and ?3 
+    order by
+        measureData.createdTime asc */ select
+            measuredat0_.data as col_0_0_,
+            measuredat0_.created_time as col_1_0_ 
+        from
+            measure_data measuredat0_ 
+        where
+            measuredat0_.data_logger_id=? 
+            and (
+                measuredat0_.created_time between ? and ?
+            ) 
+        order by
+            measuredat0_.created_time asc limit ?
+Hibernate: 
+    /* select
+        measureData.data,
+        measureData.createdTime 
+    from
+        MeasureData measureData 
+    where
+        measureData.dataLogger.id = ?1 
+        and measureData.createdTime between ?2 and ?3 
+    order by
+        measureData.createdTime asc */ select
+            measuredat0_.data as col_0_0_,
+            measuredat0_.created_time as col_1_0_ 
+        from
+            measure_data measuredat0_ 
+        where
+            measuredat0_.data_logger_id=? 
+            and (
+                measuredat0_.created_time between ? and ?
+            ) 
+        order by
+            measuredat0_.created_time asc limit ?
+2021-09-08 10:10:23.066  INFO 12984 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@7f82ce18 testClass = MeasureDataServiceTest, testInstance = kr.co.greetech.back.service.MeasureDataServiceTest@657f4f8a, testMethod = addMeasureDataDtos@MeasureDataServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@336b42e5 testClass = MeasureDataServiceTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@39e54119, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@31e00b85, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1ea682c1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@234cb822, [ImportsContextCustomizer@3787aee1 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2f51503c, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3e2388eb, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
