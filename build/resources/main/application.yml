@@ -2,10 +2,15 @@ spring:
   profiles:
     active: local
   datasource:
-    url: jdbc:h2:tcp://localhost/~/greentech
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mariadb://web-back-test.cewzughkzm66.ap-northeast-2.rds.amazonaws.com/back
+    username: admin
+    password: 12341234
+    driver-class-name: org.mariadb.jdbc.Driver
+
+#    url: jdbc:h2:tcp://localhost/~/greentech
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
