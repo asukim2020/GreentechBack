@@ -10,7 +10,5 @@ import java.util.List;
 @Repository
 public interface MeasureDataRepository extends JpaRepository<MeasureData, Long> {
     //    List<MeasureData> findAllByCreatedTimeBetween(LocalDateTime start, LocalDateTime end);
-
-    // TODO: - test 코드 => 지울 것
-    List<MeasureData> findAllByDataLoggerId(Long dataLoggerId);
+//    List<MeasureData> findAllByDataLoggerId(Long dataLoggerId);
 }

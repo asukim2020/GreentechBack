@@ -40,20 +40,20 @@ public class MeasureDataService {
 
     public List<MeasureDataDto> select(
             Long dataLoggerId,
-            LocalDateTime start,
-            LocalDateTime end
+            LocalDateTime from,
+            LocalDateTime to
     ) {
         return measureDataQueryRepository.search(
                 dataLoggerId,
-                start,
-                end
+                from,
+                to
         );
     }
 
     // TODO: - test 코드 => 지울 것
-    public List<MeasureData> selectAll(
+    public List<MeasureDataDto> selectAll(
             Long dataLoggerId
     ) {
-        return measureDataRepository.findAllByDataLoggerId(dataLoggerId);
+        return measureDataQueryRepository.searchAll(dataLoggerId);
     }
 }

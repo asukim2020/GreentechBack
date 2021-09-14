@@ -23,8 +23,8 @@ public class MeasureDataQueryRepository {
 
     public List<MeasureDataDto> search(
             Long dataLoggerId,
-            LocalDateTime start,
-            LocalDateTime end
+            LocalDateTime from,
+            LocalDateTime to
     ) {
         return queryFactory
                 .select(new QMeasureDataDto(
@@ -34,9 +34,26 @@ public class MeasureDataQueryRepository {
                 .from(measureData)
                 .where(
                         dataLoggerEq(dataLoggerId),
-                        crateTimeBetween(start, end)
-                ).orderBy(measureData.createdTime.asc())
-                .limit(500)
+                        crateTimeBetween(from, to)
+                ).orderBy(measureData.createdTime.desc())
+                .limit(100)
+                .fetch();
+    }
+
+    // TODO: - test 코드 => 지울 것
+    public List<MeasureDataDto> searchAll(
+            Long dataLoggerId
+    ) {
+        return queryFactory
+                .select(new QMeasureDataDto(
+                        measureData.data,
+                        measureData.createdTime
+                ))
+                .from(measureData)
+                .where(
+                        dataLoggerEq(dataLoggerId)
+                ).orderBy(measureData.createdTime.desc())
+                .limit(10)
                 .fetch();
     }
 

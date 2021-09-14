@@ -6,13 +6,14 @@ import kr.co.greetech.back.dto.MeasureDataDto;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @ToString(exclude = {"dataLogger"})
-public class MeasureData extends CreateTimeEntity {
+public class MeasureData {
     @Id
     @GeneratedValue
     @Column(name = "MEASURE_DATA_ID")
@@ -26,11 +27,15 @@ public class MeasureData extends CreateTimeEntity {
     @Column(nullable = false)
     String data;
 
+    @Column(updatable = false)
+    private LocalDateTime createdTime;
+
     public static MeasureData create(MeasureDataDto measureDataDto, DataLogger dataLogger) {
         MeasureData measureData = new MeasureData();
         measureData.id = null;
         measureData.data = measureDataDto.getData();
         measureData.dataLogger = dataLogger;
+        measureData.createdTime = measureDataDto.getTime();
         return measureData;
     }
 }

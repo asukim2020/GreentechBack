@@ -22,10 +22,7 @@ public class QMeasureData extends EntityPathBase<MeasureData> {
 
     public static final QMeasureData measureData = new QMeasureData("measureData");
 
-    public final kr.co.greetech.back.Auditing.QCreateTimeEntity _super = new kr.co.greetech.back.Auditing.QCreateTimeEntity(this);
-
-    //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdTime = _super.createdTime;
+    public final DateTimePath<java.time.LocalDateTime> createdTime = createDateTime("createdTime", java.time.LocalDateTime.class);
 
     public final StringPath data = createString("data");
 

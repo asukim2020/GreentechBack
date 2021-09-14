@@ -1,7 +1,6 @@
 package kr.co.greetech.back.controller;
 
 import kr.co.greetech.back.dto.MeasureDataDto;
-import kr.co.greetech.back.entity.MeasureData;
 import kr.co.greetech.back.service.MeasureDataService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @RestController
 @RequiredArgsConstructor
@@ -33,10 +30,10 @@ public class MeasureDataController {
     @GetMapping("/{dataLoggerId}")
     public Result<List<MeasureDataDto>> select(
             @PathVariable Long dataLoggerId,
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime start,
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime end
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime from,
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime to
     ) {
-        List<MeasureDataDto> dataDtos = measureDataService.select(dataLoggerId, start, end);
+        List<MeasureDataDto> dataDtos = measureDataService.select(dataLoggerId, from, to);
         return new Result<>(dataDtos.size(), dataDtos);
     }
 
@@ -45,10 +42,7 @@ public class MeasureDataController {
     public Result<List<MeasureDataDto>> selectAll(
             @PathVariable Long dataLoggerId
     ) {
-        List<MeasureData> measureDatas = measureDataService.selectAll(dataLoggerId);
-        List<MeasureDataDto> dataDtos = measureDatas.stream()
-                .map(measureData -> new MeasureDataDto(measureData.getData(), measureData.getCreatedTime()))
-                .collect(Collectors.toList());
+        List<MeasureDataDto> dataDtos = measureDataService.selectAll(dataLoggerId);
         return new Result<>(dataDtos.size(), dataDtos);
     }
 

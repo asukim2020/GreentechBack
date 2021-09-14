@@ -91,11 +91,10 @@ class MeasureDataControllerTest {
         LocalDateTime start = LocalDateTime.now().minusDays(1L);
         LocalDateTime end = LocalDateTime.now().plusDays(1L);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
-
-        MvcResult response = mockMvc.perform(get("/measureData")
-                .param("dataLoggerId", dataLoggerId.toString())
-                .param("start", formatter.format(start))
-                .param("end", formatter.format(end))
+        System.out.println("start date: " + formatter.format(start));
+        MvcResult response = mockMvc.perform(get("/measureData/" + dataLoggerId.toString())
+                .param("from", "2021-09-13T16:00:14.611")
+                .param("to", "2021-09-14T23:00:14.611")
         ).andExpect(status().isOk())
                 .andReturn();
 
