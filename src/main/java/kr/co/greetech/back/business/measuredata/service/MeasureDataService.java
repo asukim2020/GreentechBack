@@ -1,11 +1,11 @@
-package kr.co.greetech.back.service;
+package kr.co.greetech.back.business.measuredata.service;
 
 import kr.co.greetech.back.dto.MeasureDataDto;
 import kr.co.greetech.back.entity.DataLogger;
 import kr.co.greetech.back.entity.MeasureData;
-import kr.co.greetech.back.repository.DataLoggerRepository;
-import kr.co.greetech.back.repository.MeasureDataQueryRepository;
-import kr.co.greetech.back.repository.MeasureDataRepository;
+import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
+import kr.co.greetech.back.business.measuredata.repository.MeasureDataQueryRepository;
+import kr.co.greetech.back.business.measuredata.repository.MeasureDataRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

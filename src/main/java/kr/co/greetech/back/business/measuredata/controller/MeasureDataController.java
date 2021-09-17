@@ -1,7 +1,7 @@
-package kr.co.greetech.back.controller;
+package kr.co.greetech.back.business.measuredata.controller;
 
 import kr.co.greetech.back.dto.MeasureDataDto;
-import kr.co.greetech.back.service.MeasureDataService;
+import kr.co.greetech.back.business.measuredata.service.MeasureDataService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("measureData")
+@RequestMapping("/measureData")
 @CrossOrigin
 public class MeasureDataController {
 

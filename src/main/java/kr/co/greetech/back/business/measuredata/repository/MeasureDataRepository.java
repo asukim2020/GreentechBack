@@ -1,4 +1,4 @@
-package kr.co.greetech.back.repository;
+package kr.co.greetech.back.business.measuredata.repository;
 
 import kr.co.greetech.back.entity.MeasureData;
 import org.springframework.data.jpa.repository.JpaRepository;

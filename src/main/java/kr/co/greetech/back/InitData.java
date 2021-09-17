@@ -1,20 +1,17 @@
-package kr.co.greetech.back.controller;
+package kr.co.greetech.back;
 
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.MeasureDataDto;
-import kr.co.greetech.back.service.CompanyService;
-import kr.co.greetech.back.service.DataLoggerService;
-import kr.co.greetech.back.service.MeasureDataService;
+import kr.co.greetech.back.business.login.jwt.service.JwtUserDetailsService;
+import kr.co.greetech.back.business.datalogger.service.DataLoggerService;
+import kr.co.greetech.back.business.measuredata.service.MeasureDataService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,13 +32,13 @@ public class InitData {
     @RequiredArgsConstructor
     static class InitDataService {
 
-        private final CompanyService companyService;
+        private final JwtUserDetailsService jwtUserDetailsService;
         private final DataLoggerService dataLoggerService;
         private final MeasureDataService measureDataService;
 
         @Transactional
         public void init() {
-            Long companyId = companyService.create(new CompanyCreateDto("Asu", "test", "test!"));
+            Long companyId = jwtUserDetailsService.create(new CompanyCreateDto("Asu", "test", "test!"));
 
             List<Long> dataLoggerIds = new ArrayList<>();
             for (int i = 0; i < 3; i++) {

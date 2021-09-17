@@ -1,5 +1,6 @@
 package kr.co.greetech.back.repository;
 
+import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.entity.Company;
 import org.junit.jupiter.api.AfterEach;
@@ -7,13 +8,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class CompanyRepositoryTest {

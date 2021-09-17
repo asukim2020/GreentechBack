@@ -1,4 +1,4 @@
-package kr.co.greetech.back.repository;
+package kr.co.greetech.back.business.measuredata.repository;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;

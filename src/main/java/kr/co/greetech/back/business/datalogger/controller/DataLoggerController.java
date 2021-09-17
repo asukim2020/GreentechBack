@@ -1,8 +1,8 @@
-package kr.co.greetech.back.controller;
+package kr.co.greetech.back.business.datalogger.controller;
 
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
-import kr.co.greetech.back.service.DataLoggerService;
+import kr.co.greetech.back.business.datalogger.service.DataLoggerService;
 import kr.co.greetech.back.util.ExceptionMsg;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

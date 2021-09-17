@@ -1,11 +1,11 @@
-package kr.co.greetech.back.service;
+package kr.co.greetech.back.business.datalogger.service;
 
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.entity.DataLogger;
-import kr.co.greetech.back.repository.CompanyRepository;
-import kr.co.greetech.back.repository.DataLoggerRepository;
+import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
+import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

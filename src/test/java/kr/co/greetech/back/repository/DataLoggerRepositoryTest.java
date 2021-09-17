@@ -1,5 +1,7 @@
 package kr.co.greetech.back.repository;
 
+import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
+import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.entity.Company;
@@ -12,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class DataLoggerRepositoryTest {
