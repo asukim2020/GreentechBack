@@ -52,7 +52,7 @@ class MeasureDataServiceTest {
         measureDataService.addMeasureDataDtos(dataLogger.getId(), measureDataDtos);
 
         LocalDateTime start = LocalDateTime.now().minusDays(1);
-        LocalDateTime end = LocalDateTime.now();
+        LocalDateTime end = LocalDateTime.now().plusDays(1);
         List<MeasureDataDto> dataDtos = measureDataService.select(
                 dataLogger.getId(),
                 start,

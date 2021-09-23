@@ -4,6 +4,7 @@ import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Profile("local")
 @Service
 @RequiredArgsConstructor
 public class JwtUserDetailsService implements UserDetailsService {

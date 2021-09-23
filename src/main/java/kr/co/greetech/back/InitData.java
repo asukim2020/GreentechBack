@@ -28,6 +28,7 @@ public class InitData {
         initDataService.init();
     }
 
+    @Profile("local")
     @Component
     @RequiredArgsConstructor
     static class InitDataService {
@@ -48,7 +49,7 @@ public class InitData {
 
             for (Long dataLoggerId : dataLoggerIds) {
                 List<MeasureDataDto> dataDtos = new ArrayList<>();
-                for (int i = 0; i < 300; i++) {
+                for (int i = 0; i < 30; i++) {
                     ArrayList<String> datas = new ArrayList<>();
                     for (int j = 0; j < 3; j++) {
                         int data = (int) (Math.random() * 30);

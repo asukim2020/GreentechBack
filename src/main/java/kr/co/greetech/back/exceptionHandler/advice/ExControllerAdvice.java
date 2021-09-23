@@ -16,14 +16,14 @@ public class ExControllerAdvice {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler
     public ErrorResult illegalArgumentExHandler(IllegalArgumentException e) {
-        log.error("[illegalArgumentExHandler] ex: ", e);
-        return new ErrorResult("illegal argument", e.getMessage());
+        log.info("[illegalArgumentExHandler] ex: ", e);
+        return new ErrorResult(HttpStatus.BAD_REQUEST.toString(), e.getMessage());
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler
     public ErrorResult usernameNotFoundExHandler(UsernameNotFoundException e) {
-        log.error("[usernameNotFoundExHandler] ex: ", e);
-        return new ErrorResult("login fail", e.getMessage());
+        log.info("[usernameNotFoundExHandler] ex: ", e);
+        return new ErrorResult(HttpStatus.UNAUTHORIZED.toString(), e.getMessage());
     }
 }

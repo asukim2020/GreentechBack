@@ -38,9 +38,8 @@ class CompanyRepositoryTest {
         System.out.println("CompanyRepositoryTest.findByName");
 
         String findName = "company1";
-        List<Company> companies = companyRepository.findByName(findName);
+        Company company = companyRepository.findByName(findName).get();
 
-        Company company = companies.get(0);
         assertThat(company.getName()).isEqualTo(findName);
     }
 }

@@ -8,6 +8,8 @@ import kr.co.greetech.back.entity.DataLogger;
 import kr.co.greetech.back.business.measuredata.service.MeasureDataService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -29,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @Transactional
+@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
 class MeasureDataControllerTest {
 
     @Autowired
@@ -87,8 +90,8 @@ class MeasureDataControllerTest {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
         System.out.println("start date: " + formatter.format(start));
         MvcResult response = mockMvc.perform(get("/measureData/" + dataLoggerId.toString())
-                .param("from", "2021-09-13T16:00:14.611")
-                .param("to", "2021-09-14T23:00:14.611")
+                .param("from", formatter.format(start))
+                .param("to", formatter.format(end))
         ).andExpect(status().isOk())
                 .andReturn();
 

@@ -8,6 +8,7 @@ import kr.co.greetech.back.business.login.jwt.service.JwtUserDetailsService;
 import kr.co.greetech.back.util.ExceptionMsg;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -18,6 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+@Profile("local")
 @Slf4j
 @RestController
 @CrossOrigin

@@ -6,6 +6,8 @@ import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.entity.DataLogger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
@@ -25,6 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @Transactional
+@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
 class DataLoggerControllerTest {
 
     @Autowired
@@ -35,13 +38,9 @@ class DataLoggerControllerTest {
 
     @Test
     void create() throws Exception {
-        MvcResult result = mockMvc.perform(post("/company")
-                .param("name", "company"))
-                .andExpect(status().isOk())
-                .andReturn();
-
-        String returnString = result.getResponse().getContentAsString();
-        long companyId = Long.parseLong(returnString);
+        Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
+        em.persist(company);
+        Long companyId = company.getId();
 
         mockMvc.perform(post("/dataLogger/{companyId}", companyId)
                 .param("modelName", "dataLogger"))
