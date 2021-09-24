@@ -9,6 +9,7 @@ import kr.co.greetech.back.entity.DataLogger;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -25,11 +26,23 @@ public class DataLoggerInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        if (request.getMethod().equals(HttpMethod.OPTIONS.toString())) {
+            return true;
+        }
+
+        final String requestTokenHeader = request.getHeader("Authorization");
+//        log.info("method: " + request.getMethod());
+//        log.info("url: " + request.getRequestURI());
+//        log.info("Authorization: " + requestTokenHeader);
+//        log.info("--- Headers - start ---");
+//        request.getHeaderNames().asIterator()
+//                .forEachRemaining(headerName ->
+//                        log.info(headerName + ": " + request.getHeader(headerName))
+//                );
+//        log.info("--- Headers - end ---");
         String path = request.getServletPath();
         String[] split = path.split("/");
         path = split[split.length - 1];
-
-        final String requestTokenHeader = request.getHeader("Authorization");
 
         String username = "null";
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
