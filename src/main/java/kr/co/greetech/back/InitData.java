@@ -49,16 +49,17 @@ public class InitData {
 
             for (Long dataLoggerId : dataLoggerIds) {
                 List<MeasureDataDto> dataDtos = new ArrayList<>();
-                for (int i = 0; i < 30; i++) {
+                for (int i = 0; i < 50; i++) {
                     ArrayList<String> datas = new ArrayList<>();
                     for (int j = 0; j < 3; j++) {
                         int data = (int) (Math.random() * 30);
                         datas.add(Integer.toString(data));
                     }
                     LocalDateTime date = LocalDateTime.now();
+                    date = date.minusNanos(date.getNano());
                     date = date.minusMinutes(date.getMinute());
                     date = date.minusSeconds(date.getSecond());
-                    date = date.minusHours(i);
+                    date = date.minusHours(i * 2);
                     MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
                     dataDtos.add(measureDataDto);
                 }
