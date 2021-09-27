@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.377s</div>
+<div class="counter">0.354s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">auditing()</td>
-<td class="success">0.377s</td>
+<td class="success">0.354s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,22 +87,22 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>11:13:08.742 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-11:13:08.773 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-11:13:08.836 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-11:13:08.851 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest], using SpringBootContextLoader
-11:13:08.851 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: class path resource [kr/co/greetech/back/Auditing/BaseTimeEntityTest-context.xml] does not exist
-11:13:08.851 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: class path resource [kr/co/greetech/back/Auditing/BaseTimeEntityTestContext.groovy] does not exist
-11:13:08.851 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-11:13:08.851 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: BaseTimeEntityTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:13:08.914 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]
-11:13:08.992 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\lenovo\Documents\web\back\build\classes\java\main\kr\co\greetech\back\BackApplication.class]
-11:13:09.008 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.co.greetech.back.BackApplication for test class kr.co.greetech.back.Auditing.BaseTimeEntityTest
-11:13:09.168 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: using defaults.
-11:13:09.168 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-11:13:09.197 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5f36ed0d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3f65de3b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@686929c7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@cf20ea1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6444c4b7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@75415a02, org.springframework.test.context.transaction.TransactionalTestExecutionListener@54c7727c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@485cf943, org.springframework.test.context.event.EventPublishingTestExecutionListener@a7fed83, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@75113784, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1a2aefc8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@35138b2f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@40f56bfb, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3c24c976, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@71bd2595]
-11:13:09.197 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@71fa6937 testClass = BaseTimeEntityTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@55105714 testClass = BaseTimeEntityTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7edbf42e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2c3befcd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@507a6067, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2c2b6486, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@33fff751, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4d426f88], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-11:13:09.243 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+<pre>11:20:51.139 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:20:51.153 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:20:51.199 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:20:51.215 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest], using SpringBootContextLoader
+11:20:51.221 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: class path resource [kr/co/greetech/back/Auditing/BaseTimeEntityTest-context.xml] does not exist
+11:20:51.222 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: class path resource [kr/co/greetech/back/Auditing/BaseTimeEntityTestContext.groovy] does not exist
+11:20:51.222 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:20:51.223 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: BaseTimeEntityTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:20:51.280 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]
+11:20:51.363 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\lenovo\Documents\web\back\build\classes\java\main\kr\co\greetech\back\BackApplication.class]
+11:20:51.371 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration kr.co.greetech.back.BackApplication for test class kr.co.greetech.back.Auditing.BaseTimeEntityTest
+11:20:51.495 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [kr.co.greetech.back.Auditing.BaseTimeEntityTest]: using defaults.
+11:20:51.495 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+11:20:51.517 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7598bc4f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@341635dd, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@62f6a9a7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@65c07b62, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@558ad951, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5037a6e0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7db96d0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6126f622, org.springframework.test.context.event.EventPublishingTestExecutionListener@62e5eb06, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@f88511c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@54be3b2b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@27f5078, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4f0f26ea, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2c29ea6, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27808ab6]
+11:20:51.522 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@196992c4 testClass = BaseTimeEntityTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4e935c26 testClass = BaseTimeEntityTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@ab4405, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@28e5d449, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@24a8a02, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@31625bf7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5e28c012, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3e3634f1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+11:20:51.563 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -112,53 +112,53 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.5.3)
 
-2021-09-27 11:13:09.716  INFO 1012 --- [    Test worker] k.c.g.back.Auditing.BaseTimeEntityTest   : Starting BaseTimeEntityTest using Java 11.0.11 on LAPTOP-JLJ2VI1H with PID 1012 (started by lenovo in C:\Users\lenovo\Documents\web\back)
-2021-09-27 11:13:09.716  INFO 1012 --- [    Test worker] k.c.g.back.Auditing.BaseTimeEntityTest   : The following profiles are active: test
-2021-09-27 11:13:10.914  INFO 1012 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-27 11:13:11.008  INFO 1012 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 3 JPA repository interfaces.
-2021-09-27 11:13:12.090  INFO 1012 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-27 11:13:12.168  INFO 1012 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-27 11:13:12.375  INFO 1012 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-27 11:13:12.500  INFO 1012 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-27 11:13:12.594  INFO 1012 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-09-27 11:13:12.641  INFO 1012 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-09-27 11:13:13.515 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:51.991  INFO 13200 --- [    Test worker] k.c.g.back.Auditing.BaseTimeEntityTest   : Starting BaseTimeEntityTest using Java 11.0.11 on LAPTOP-JLJ2VI1H with PID 13200 (started by lenovo in C:\Users\lenovo\Documents\web\back)
+2021-09-27 11:20:51.992  INFO 13200 --- [    Test worker] k.c.g.back.Auditing.BaseTimeEntityTest   : The following profiles are active: test
+2021-09-27 11:20:53.081  INFO 13200 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-27 11:20:53.197  INFO 13200 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 3 JPA repository interfaces.
+2021-09-27 11:20:54.303  INFO 13200 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-27 11:20:54.386  INFO 13200 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-27 11:20:54.607  INFO 13200 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-27 11:20:54.758  INFO 13200 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-27 11:20:54.853  INFO 13200 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-27 11:20:54.902  INFO 13200 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-09-27 11:20:55.665 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     drop table if exists company CASCADE 
-2021-09-27 11:13:13.515  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793515 | took 1ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.668  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255668 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
 
     drop table if exists company CASCADE 
 
     drop table if exists company CASCADE ;
-2021-09-27 11:13:13.515 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.669 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     drop table if exists data_logger CASCADE 
-2021-09-27 11:13:13.515  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793515 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.669  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255669 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
 
     drop table if exists data_logger CASCADE 
 
     drop table if exists data_logger CASCADE ;
-2021-09-27 11:13:13.515 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.670 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     drop table if exists measure_data CASCADE 
-2021-09-27 11:13:13.515  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793515 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.671  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255671 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
 
     drop table if exists measure_data CASCADE 
 
     drop table if exists measure_data CASCADE ;
-2021-09-27 11:13:13.515 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.671 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     drop sequence if exists hibernate_sequence
-2021-09-27 11:13:13.515  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793515 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.672  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255672 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/greentech
 
     drop sequence if exists hibernate_sequence
 
     drop sequence if exists hibernate_sequence;
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : create sequence hibernate_sequence start with 1 increment by 1
-2021-09-27 11:13:13.530  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793530 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.675 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : create sequence hibernate_sequence start with 1 increment by 1
+2021-09-27 11:20:55.675  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255675 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 create sequence hibernate_sequence start with 1 increment by 1
 create sequence hibernate_sequence start with 1 increment by 1;
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.677 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     create table company (
        company_id bigint not null,
@@ -169,7 +169,7 @@ create sequence hibernate_sequence start with 1 increment by 1;
         name varchar(255),
         primary key (company_id)
     )
-2021-09-27 11:13:13.530  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793530 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.678  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255678 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     create table company (
        company_id bigint not null,
@@ -190,7 +190,7 @@ create sequence hibernate_sequence start with 1 increment by 1;
         name varchar(255),
         primary key (company_id)
     );
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.679 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     create table data_logger (
        data_logger_id bigint not null,
@@ -200,7 +200,7 @@ create sequence hibernate_sequence start with 1 increment by 1;
         company_id bigint,
         primary key (data_logger_id)
     )
-2021-09-27 11:13:13.530  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793530 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.680  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255680 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     create table data_logger (
        data_logger_id bigint not null,
@@ -219,7 +219,7 @@ create sequence hibernate_sequence start with 1 increment by 1;
         company_id bigint,
         primary key (data_logger_id)
     );
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.681 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     create table measure_data (
        measure_data_id bigint not null,
@@ -228,7 +228,7 @@ create sequence hibernate_sequence start with 1 increment by 1;
         data_logger_id bigint,
         primary key (measure_data_id)
     )
-2021-09-27 11:13:13.530  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793530 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.682  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255682 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     create table measure_data (
        measure_data_id bigint not null,
@@ -245,35 +245,35 @@ create sequence hibernate_sequence start with 1 increment by 1;
         data_logger_id bigint,
         primary key (measure_data_id)
     );
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.683 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     alter table company 
        add constraint UK_jymm78yo2olotyo1e343ct9ko unique (login_id)
-2021-09-27 11:13:13.530  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793530 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.684  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255684 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     alter table company 
        add constraint UK_jymm78yo2olotyo1e343ct9ko unique (login_id)
 
     alter table company 
        add constraint UK_jymm78yo2olotyo1e343ct9ko unique (login_id);
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.684 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     alter table company 
        add constraint UK_niu8sfil2gxywcru9ah3r4ec5 unique (name)
-2021-09-27 11:13:13.530  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793530 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.685  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255685 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     alter table company 
        add constraint UK_niu8sfil2gxywcru9ah3r4ec5 unique (name)
 
     alter table company 
        add constraint UK_niu8sfil2gxywcru9ah3r4ec5 unique (name);
-2021-09-27 11:13:13.530 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.686 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     alter table data_logger 
        add constraint FK5wejnpaohywo5fhc6jhegrefe 
        foreign key (company_id) 
        references company
-2021-09-27 11:13:13.546  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793546 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.688  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255688 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     alter table data_logger 
        add constraint FK5wejnpaohywo5fhc6jhegrefe 
@@ -284,13 +284,13 @@ create sequence hibernate_sequence start with 1 increment by 1;
        add constraint FK5wejnpaohywo5fhc6jhegrefe 
        foreign key (company_id) 
        references company;
-2021-09-27 11:13:13.546 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:55.689 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     
     alter table measure_data 
        add constraint FKat8mm6oaqfehk7y9o2xb4i0jj 
        foreign key (data_logger_id) 
        references data_logger
-2021-09-27 11:13:13.546  INFO 1012 --- [    Test worker] p6spy                                    : #1632708793546 | took 2ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:55.691  INFO 13200 --- [    Test worker] p6spy                                    : #1632709255691 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/greentech
 
     alter table measure_data 
        add constraint FKat8mm6oaqfehk7y9o2xb4i0jj 
@@ -301,40 +301,40 @@ create sequence hibernate_sequence start with 1 increment by 1;
        add constraint FKat8mm6oaqfehk7y9o2xb4i0jj 
        foreign key (data_logger_id) 
        references data_logger;
-2021-09-27 11:13:13.546  INFO 1012 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-09-27 11:13:13.561  INFO 1012 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 11:13:14.638  WARN 1012 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-09-27 11:13:15.496  INFO 1012 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2021-09-27 11:20:55.694  INFO 13200 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-27 11:20:55.706  INFO 13200 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-27 11:20:56.811  WARN 13200 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-27 11:20:57.684  INFO 13200 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 3e5876f2-a134-4989-83e3-eed1d65fe740
+Using generated security password: 85293d66-dc75-4afb-a2de-a40b1bbdee6e
 
-2021-09-27 11:13:15.817  INFO 1012 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@358ada5c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d98c7ab, org.springframework.security.web.header.HeaderWriterFilter@550d461e, org.springframework.security.web.csrf.CsrfFilter@5217c08a, org.springframework.security.web.authentication.logout.LogoutFilter@6126b04a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@160f84ad, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@63d3558d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@338c6625, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4cd0213, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23eaa594, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@383d40cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fbd37dd, org.springframework.security.web.session.SessionManagementFilter@122b46b6, org.springframework.security.web.access.ExceptionTranslationFilter@15e22d47, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68b34711]
-2021-09-27 11:13:15.946  INFO 1012 --- [    Test worker] k.c.g.back.Auditing.BaseTimeEntityTest   : Started BaseTimeEntityTest in 6.703 seconds (JVM running for 9.276)
-2021-09-27 11:13:16.004  INFO 1012 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@71fa6937 testClass = BaseTimeEntityTest, testInstance = kr.co.greetech.back.Auditing.BaseTimeEntityTest@10aa5a0c, testMethod = auditing@BaseTimeEntityTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@55105714 testClass = BaseTimeEntityTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7edbf42e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2c3befcd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@507a6067, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2c2b6486, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@33fff751, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4d426f88], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@66b953cc]; rollback [true]
-2021-09-27 11:13:16.207 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+2021-09-27 11:20:57.996  INFO 13200 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cca4264, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e3d0e24, org.springframework.security.web.header.HeaderWriterFilter@4ee9c48d, org.springframework.security.web.csrf.CsrfFilter@4733895f, org.springframework.security.web.authentication.logout.LogoutFilter@73ba3d6d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@40258a6a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2942776f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@ebfa8b4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@586a8237, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7685e466, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ec35554, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c8f86e, org.springframework.security.web.session.SessionManagementFilter@349d94ad, org.springframework.security.web.access.ExceptionTranslationFilter@703a399b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6cbc5bc7]
+2021-09-27 11:20:58.134  INFO 13200 --- [    Test worker] k.c.g.back.Auditing.BaseTimeEntityTest   : Started BaseTimeEntityTest in 6.561 seconds (JVM running for 8.439)
+2021-09-27 11:20:58.177  INFO 13200 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@196992c4 testClass = BaseTimeEntityTest, testInstance = kr.co.greetech.back.Auditing.BaseTimeEntityTest@28bf868c, testMethod = auditing@BaseTimeEntityTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4e935c26 testClass = BaseTimeEntityTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@ab4405, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@28e5d449, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@24a8a02, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@31625bf7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5e28c012, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3e3634f1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@5801853d]; rollback [true]
+2021-09-27 11:20:58.371 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2021-09-27 11:13:16.207  INFO 1012 --- [    Test worker] p6spy                                    : #1632708796207 | took 3ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:58.383  INFO 13200 --- [    Test worker] p6spy                                    : #1632709258383 | took 3ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-savedCompany.getCreatedTime() = 2021-09-27T11:13:16.207096900
-savedCompany.getLastModifiedTime() = 2021-09-27T11:13:16.207096900
-2021-09-27 11:13:16.332 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+savedCompany.getCreatedTime() = 2021-09-27T11:20:58.367641300
+savedCompany.getLastModifiedTime() = 2021-09-27T11:20:58.367641300
+2021-09-27 11:20:58.483 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2021-09-27 11:13:16.332  INFO 1012 --- [    Test worker] p6spy                                    : #1632708796332 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:58.483  INFO 13200 --- [    Test worker] p6spy                                    : #1632709258483 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-savedDataLogger.getCreatedTime() = 2021-09-27T11:13:16.332054
-savedDataLogger.getLastModifiedTime() = 2021-09-27T11:13:16.332054
-2021-09-27 11:13:16.347 DEBUG 1012 --- [    Test worker] org.hibernate.SQL                        : 
+savedDataLogger.getCreatedTime() = 2021-09-27T11:20:58.482338400
+savedDataLogger.getLastModifiedTime() = 2021-09-27T11:20:58.482338400
+2021-09-27 11:20:58.489 DEBUG 13200 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2021-09-27 11:13:16.347  INFO 1012 --- [    Test worker] p6spy                                    : #1632708796347 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/greentech
+2021-09-27 11:20:58.489  INFO 13200 --- [    Test worker] p6spy                                    : #1632709258489 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-savedMeasureData.getCreatedTime() = 2021-09-27T11:13:16.332054
-2021-09-27 11:13:16.347  INFO 1012 --- [    Test worker] p6spy                                    : #1632708796347 | took 0ms | rollback | connection 3| url jdbc:h2:tcp://localhost/~/greentech
+savedMeasureData.getCreatedTime() = 2021-09-27T11:20:58.486324
+2021-09-27 11:20:58.503  INFO 13200 --- [    Test worker] p6spy                                    : #1632709258503 | took 0ms | rollback | connection 3| url jdbc:h2:tcp://localhost/~/greentech
 
 ;
-2021-09-27 11:13:16.363  INFO 1012 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@71fa6937 testClass = BaseTimeEntityTest, testInstance = kr.co.greetech.back.Auditing.BaseTimeEntityTest@10aa5a0c, testMethod = auditing@BaseTimeEntityTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@55105714 testClass = BaseTimeEntityTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7edbf42e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2c3befcd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@507a6067, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2c2b6486, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@33fff751, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4d426f88], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
+2021-09-27 11:20:58.507  INFO 13200 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@196992c4 testClass = BaseTimeEntityTest, testInstance = kr.co.greetech.back.Auditing.BaseTimeEntityTest@28bf868c, testMethod = auditing@BaseTimeEntityTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4e935c26 testClass = BaseTimeEntityTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@ab4405, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@28e5d449, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@24a8a02, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@31625bf7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5e28c012, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3e3634f1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
 </pre>
 </span>
 </div>
@@ -346,7 +346,7 @@ savedMeasureData.getCreatedTime() = 2021-09-27T11:13:16.332054
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.1.1</a> at 2021. 9. 27. 오전 11:13:20</p>
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 2021. 9. 27. 오전 11:21:02</p>
 </div>
 </div>
 </body>
