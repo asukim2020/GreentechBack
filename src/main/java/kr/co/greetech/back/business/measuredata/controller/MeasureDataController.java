@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -31,8 +32,10 @@ public class MeasureDataController {
     public Result<List<MeasureDataDto>> select(
             @PathVariable Long dataLoggerId,
             @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime from,
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime to
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime to,
+            HttpServletResponse response
     ) {
+        response.setHeader("Cache-Control","no-store");
         List<MeasureDataDto> dataDtos = measureDataService.select(dataLoggerId, from, to);
         return new Result<>(dataDtos.size(), dataDtos);
     }
@@ -40,8 +43,10 @@ public class MeasureDataController {
     // TODO: - test 코드 => 지울 것
     @GetMapping("/all/{dataLoggerId}")
     public Result<List<MeasureDataDto>> selectAll(
-            @PathVariable Long dataLoggerId
+            @PathVariable Long dataLoggerId,
+            HttpServletResponse response
     ) {
+        response.setHeader("Cache-Control","no-store");
         List<MeasureDataDto> dataDtos = measureDataService.selectAll(dataLoggerId);
         return new Result<>(dataDtos.size(), dataDtos);
     }

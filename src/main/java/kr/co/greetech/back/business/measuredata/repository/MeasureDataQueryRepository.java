@@ -53,7 +53,7 @@ public class MeasureDataQueryRepository {
                 .where(
                         dataLoggerEq(dataLoggerId)
                 ).orderBy(measureData.createdTime.desc())
-                .limit(10)
+                .limit(100)
                 .fetch();
     }
 
