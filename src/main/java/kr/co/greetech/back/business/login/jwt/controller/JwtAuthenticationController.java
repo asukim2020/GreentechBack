@@ -31,7 +31,7 @@ public class JwtAuthenticationController {
     private final JwtTokenUtil jwtTokenUtil;
     private final JwtUserDetailsService userDetailsService;
 
-    @PostMapping()
+    @PostMapping("/signup")
     public Long signup(@Validated CompanyCreateDto companyCreateDto, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
