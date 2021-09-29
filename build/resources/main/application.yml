@@ -26,7 +26,7 @@ spring:
     open-in-view: false
 
 logging.level:
-  root: debug
+#  root: debug
   org.hibernate.SQL: info
   # org.hibernate.type: trace
 
