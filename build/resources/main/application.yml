@@ -16,6 +16,7 @@ spring:
 
   jpa:
     hibernate:
+#      TODO: - 서버 업로드시 none 으로 변경할 것
       ddl-auto: none
     properties:
       hibernate:

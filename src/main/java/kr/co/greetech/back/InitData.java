@@ -25,6 +25,7 @@ public class InitData {
 
     @PostConstruct
     public void init() {
+//        TODO: - 서버 올릴 시에 해당 부분 제거하기
 //        initDataService.init();
     }
 
@@ -51,7 +52,7 @@ public class InitData {
                 List<MeasureDataDto> dataDtos = new ArrayList<>();
                 for (int i = 0; i < 50; i++) {
                     ArrayList<String> datas = new ArrayList<>();
-                    for (int j = 0; j < 3; j++) {
+                    for (int j = 0; j < 10; j++) {
                         int data = (int) (Math.random() * 30);
                         datas.add(Integer.toString(data));
                     }
