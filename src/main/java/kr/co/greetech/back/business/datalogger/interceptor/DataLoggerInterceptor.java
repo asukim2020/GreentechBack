@@ -1,6 +1,7 @@
 package kr.co.greetech.back.business.datalogger.interceptor;
 
 import io.jsonwebtoken.ExpiredJwtException;
+import kr.co.greetech.back.annotation.Auth;
 import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
 import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
 import kr.co.greetech.back.business.login.jwt.util.JwtTokenUtil;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +31,12 @@ public class DataLoggerInterceptor implements HandlerInterceptor {
         if (request.getMethod().equals(HttpMethod.OPTIONS.toString())) {
             return true;
         }
+
+        if(!(handler instanceof HandlerMethod)) {
+            return true;
+        }
+
+        HandlerMethod handlerMethod = (HandlerMethod)handler;
 
         final String requestTokenHeader = request.getHeader("Authorization");
 //        log.info("method: " + request.getMethod());
@@ -60,6 +68,14 @@ public class DataLoggerInterceptor implements HandlerInterceptor {
 
         Company company = companyRepository.findByLoginId(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Unauthorized"));
+
+        Auth auth = handlerMethod.getMethodAnnotation(Auth.class);
+        if (auth != null) {
+            if (auth.role().toString().equals(Auth.Role.NONE.toString())) {
+                return true;
+            }
+        }
+
         Long companyId = company.getId();
         long pathCompanyId = Long.parseLong(path);
 

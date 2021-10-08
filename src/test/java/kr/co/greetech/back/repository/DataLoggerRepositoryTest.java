@@ -31,7 +31,7 @@ class DataLoggerRepositoryTest {
         companyRepository.save(company);
 
         for (int i = 0; i < 5; i++) {
-            DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger" + i), company);
+            DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger" + i, "", ""), company);
 
             dataLoggerRepository.save(dataLogger);
         }

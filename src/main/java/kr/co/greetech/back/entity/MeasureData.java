@@ -6,6 +6,7 @@ import kr.co.greetech.back.dto.MeasureDataDto;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,14 +20,17 @@ public class MeasureData {
     @Column(name = "MEASURE_DATA_ID")
     Long id;
 
+    @NotNull(message = "MeasureData dataLogger")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DATA_LOGGER_ID")
     @JsonIgnore
     DataLogger dataLogger;
 
+    @NotNull(message = "MeasureData data")
     @Column(nullable = false)
     String data;
 
+    @NotNull(message = "MeasureData createdTime")
     @Column(updatable = false)
     private LocalDateTime createdTime;
 

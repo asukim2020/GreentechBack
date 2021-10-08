@@ -8,6 +8,7 @@ import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
 import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +35,13 @@ public class DataLoggerService {
         return savedDataLogger.getId();
     }
 
+    @Transactional
+    public Long update(DataLoggerReadDto dataLoggerReadDto) {
+        DataLogger dataLogger = findEntityById(dataLoggerReadDto.getId());
+        dataLogger.update(dataLoggerReadDto);
+        return dataLogger.getId();
+    }
+
     public List<DataLoggerReadDto> findByCompanyId(Long companyId) {
         List<DataLogger> dataLoggers = dataLoggerRepository.findByCompanyId(companyId);
         return dataLoggers.stream()
@@ -46,21 +54,12 @@ public class DataLoggerService {
         optionalDataLogger.orElseThrow(() -> new IllegalArgumentException("can't found data"));
 
         DataLogger dataLogger = optionalDataLogger.get();
-        return new DataLoggerReadDto(
-                dataLogger.getId(),
-                dataLogger.getModelName()
-        );
+        return new DataLoggerReadDto(dataLogger);
     }
 
     private DataLogger findEntityById(Long dataLoggerId) {
         Optional<DataLogger> optionalDataLogger = dataLoggerRepository.findById(dataLoggerId);
         optionalDataLogger.orElseThrow(() -> new IllegalArgumentException("can't found data"));
         return optionalDataLogger.get();
-    }
-
-    public Long update(DataLoggerReadDto dataLoggerDto) {
-        DataLogger dataLogger = findEntityById(dataLoggerDto.getId());
-        // TODO:- 수정로직 추가 - Entity 내부에 수정함수 정의 -> 어떻게 수정할 건지 정해지고 난 이후에 추가 할 것
-        return dataLogger.getId();
     }
 }

@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @Transactional
-@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
+@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
 class DataLoggerControllerTest {
 
     @Autowired
@@ -42,14 +42,18 @@ class DataLoggerControllerTest {
         em.persist(company);
         Long companyId = company.getId();
 
-        mockMvc.perform(post("/dataLogger/{companyId}", companyId)
-                .param("modelName", "dataLogger"))
+        mockMvc.perform(
+                post("/dataLogger/{companyId}", companyId)
+                        .param("modelName", "dataLogger")
+                        .param("unit", "")
+                        .param("channelName", "")
+        )
                 .andExpect(status().isOk());
     }
 
     @Test
     void one() throws Exception {
-        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), null);
         em.persist(dataLogger);
         Long dataLoggerId = dataLogger.getId();
 
@@ -64,9 +68,9 @@ class DataLoggerControllerTest {
         em.persist(company);
         Long companyId = company.getId();
 
-        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger"), null));
-        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger"), null));
-        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger"), null));
+        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), company));
+        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), company));
+        em.persist(DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), company));
 
         mockMvc.perform(get("/dataLogger/{companyId}", companyId))
                 .andExpect(status().isOk());

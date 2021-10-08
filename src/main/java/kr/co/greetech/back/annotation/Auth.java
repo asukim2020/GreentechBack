@@ -12,6 +12,7 @@ public @interface Auth {
     Role role() default Role.LOGIN;
 
     enum Role {
+        NONE,
         LOGIN,
         COMPANY,
         DATA_LOGGER,

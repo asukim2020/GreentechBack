@@ -40,7 +40,7 @@ class DataLoggerServiceTest {
         Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
         companyRepository.save(company);
 
-        Long dataLoggerId = dataLoggerService.register(company.getId(), new DataLoggerCreateDto("dataLogger"));
+        Long dataLoggerId = dataLoggerService.register(company.getId(), new DataLoggerCreateDto("dataLogger", "", ""));
         DataLoggerReadDto dataLoggerReadDto = dataLoggerService.findById(dataLoggerId);
         assertThat(dataLoggerReadDto).isNotNull();
     }
@@ -48,7 +48,7 @@ class DataLoggerServiceTest {
     @Test
     public void IllegalRegister() {
         assertThrows(IllegalArgumentException.class, () -> {
-            dataLoggerService.register(-1L, new DataLoggerCreateDto("dataLogger"));
+            dataLoggerService.register(-1L, new DataLoggerCreateDto("dataLogger", "", ""));
         });
     }
 }

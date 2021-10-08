@@ -3,8 +3,10 @@ package kr.co.greetech.back.repository;
 import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
 import kr.co.greetech.back.business.measuredata.repository.MeasureDataQueryRepository;
 import kr.co.greetech.back.business.measuredata.repository.MeasureDataRepository;
+import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.MeasureDataDto;
+import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.entity.DataLogger;
 import kr.co.greetech.back.entity.MeasureData;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,7 +40,10 @@ class MeasureDataQueryRepositoryTest {
 
     @BeforeEach
     void beforeEach() throws InterruptedException {
-        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), null);
+        Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
+        em.persist(company);
+
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), company);
         dataLoggerRepository.save(dataLogger);
 
         for (int i = 0; i < 5; i++) {

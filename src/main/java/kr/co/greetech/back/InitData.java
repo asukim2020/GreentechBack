@@ -44,7 +44,14 @@ public class InitData {
 
             List<Long> dataLoggerIds = new ArrayList<>();
             for (int i = 0; i < 3; i++) {
-                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)"));
+                StringBuilder unit = new StringBuilder();
+                for(int j = 0; j < 10; j++){
+                    if (j != 0) {
+                        unit.append(",");
+                    }
+                    unit.append(i + 1);
+                }
+                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), ""));
                 dataLoggerIds.add(dataLoggerId);
             }
 
@@ -66,6 +73,36 @@ public class InitData {
                 }
                 measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
             }
+
+            Long companyId2 = jwtUserDetailsService.create(new CompanyCreateDto("Asu2", "test2", "test!"));
+
+            List<Long> dataLoggerIds2 = new ArrayList<>();
+            StringBuilder unit = new StringBuilder();
+            for(int j = 0; j < 10; j++){
+                if (j != 0) {
+                    unit.append(",");
+                }
+                unit.append(1);
+            }
+            Long dataLoggerId2 = dataLoggerService.register(companyId2, new DataLoggerCreateDto("dataLogger", unit.toString(), ""));
+            dataLoggerIds2.add(dataLoggerId2);
+
+            List<MeasureDataDto> dataDtos2 = new ArrayList<>();
+            for (int i = 0; i < 50; i++) {
+                ArrayList<String> datas = new ArrayList<>();
+                for (int j = 0; j < 10; j++) {
+                    int data = (int) (Math.random() * 30);
+                    datas.add(Integer.toString(data));
+                }
+                LocalDateTime date = LocalDateTime.now();
+                date = date.minusNanos(date.getNano());
+                date = date.minusMinutes(date.getMinute());
+                date = date.minusSeconds(date.getSecond());
+                date = date.minusHours(i * 2);
+                MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
+                dataDtos2.add(measureDataDto);
+            }
+            measureDataService.addMeasureDataDtos(dataLoggerId2, dataDtos2);
         }
     }
 

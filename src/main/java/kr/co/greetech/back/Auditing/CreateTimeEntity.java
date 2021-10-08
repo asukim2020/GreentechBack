@@ -9,12 +9,14 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 @Getter
 public class CreateTimeEntity {
+    @NotNull
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdTime;

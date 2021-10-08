@@ -38,7 +38,7 @@ class BaseTimeEntityTest {
         System.out.println("savedCompany.getCreatedTime() = " + savedCompany.getCreatedTime());
         System.out.println("savedCompany.getLastModifiedTime() = " + savedCompany.getLastModifiedTime());
 
-        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger"), savedCompany);
+        DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), savedCompany);
         DataLogger savedDataLogger = dataLoggerRepository.save(dataLogger);
         assertThat(savedDataLogger.getCreatedTime()).isNotNull();
         assertThat(savedDataLogger.getLastModifiedTime()).isNotNull();

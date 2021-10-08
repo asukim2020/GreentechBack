@@ -24,6 +24,8 @@ public class QDataLogger extends EntityPathBase<DataLogger> {
 
     public final kr.co.greetech.back.Auditing.QBaseTimeEntity _super = new kr.co.greetech.back.Auditing.QBaseTimeEntity(this);
 
+    public final StringPath channelName = createString("channelName");
+
     public final QCompany company;
 
     //inherited
@@ -35,6 +37,8 @@ public class QDataLogger extends EntityPathBase<DataLogger> {
     public final DateTimePath<java.time.LocalDateTime> lastModifiedTime = _super.lastModifiedTime;
 
     public final StringPath modelName = createString("modelName");
+
+    public final StringPath unit = createString("unit");
 
     public QDataLogger(String variable) {
         this(DataLogger.class, forVariable(variable), INITS);

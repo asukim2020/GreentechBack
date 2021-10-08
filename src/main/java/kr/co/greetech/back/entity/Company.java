@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
@@ -20,12 +21,15 @@ public class Company extends BaseTimeEntity {
     @Column(name = "COMPANY_ID")
     Long id;
 
+    @NotNull(message = "Company name")
     @Column(unique = true)
     String name;
 
+    @NotNull(message = "Company loginId")
     @Column(unique = true)
     String loginId;
 
+    @NotNull(message = "Company loginPw")
     String loginPw;
 
     private Company(CompanyCreateDto companyCreateDto) {
