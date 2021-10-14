@@ -51,15 +51,18 @@ public class DataLogger extends BaseTimeEntity {
     }
 
     public void update(DataLoggerReadDto dataLoggerReadDto) {
-        if (dataLoggerReadDto.getModelName() != null) {
+        if (dataLoggerReadDto.getModelName() != null
+                && !dataLoggerReadDto.getModelName().equals("null")) {
             this.modelName = dataLoggerReadDto.getModelName();
         }
 
-        if (dataLoggerReadDto.getUnit() != null) {
+        if (dataLoggerReadDto.getUnit() != null
+                && !dataLoggerReadDto.getUnit().equals("null")) {
             this.unit = dataLoggerReadDto.getUnit();
         }
 
-        if (dataLoggerReadDto.getChannelName() != null) {
+        if (dataLoggerReadDto.getChannelName() != null
+                && !dataLoggerReadDto.getChannelName().equals("null")) {
             this.channelName = dataLoggerReadDto.getChannelName();
         }
     }

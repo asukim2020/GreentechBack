@@ -45,13 +45,16 @@ public class InitData {
             List<Long> dataLoggerIds = new ArrayList<>();
             for (int i = 0; i < 3; i++) {
                 StringBuilder unit = new StringBuilder();
+                StringBuilder channel = new StringBuilder();
                 for(int j = 0; j < 10; j++){
                     if (j != 0) {
                         unit.append(",");
+                        channel.append(",");
                     }
                     unit.append(i + 1);
+                    channel.append(i + 1);
                 }
-                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), ""));
+                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), channel.toString()));
                 dataLoggerIds.add(dataLoggerId);
             }
 
