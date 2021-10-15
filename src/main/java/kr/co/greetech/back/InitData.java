@@ -54,15 +54,16 @@ public class InitData {
                     unit.append(i + 1);
                     channel.append(i + 1);
                 }
-                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), channel.toString()));
+                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), ""));
                 dataLoggerIds.add(dataLoggerId);
             }
 
+            int count = 0;
             for (Long dataLoggerId : dataLoggerIds) {
                 List<MeasureDataDto> dataDtos = new ArrayList<>();
                 for (int i = 0; i < 50; i++) {
                     ArrayList<String> datas = new ArrayList<>();
-                    for (int j = 0; j < 10; j++) {
+                    for (int j = 0; j < 5 - count; j++) {
                         int data = (int) (Math.random() * 30);
                         datas.add(Integer.toString(data));
                     }
@@ -75,6 +76,7 @@ public class InitData {
                     dataDtos.add(measureDataDto);
                 }
                 measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
+                count++;
             }
 
             Long companyId2 = jwtUserDetailsService.create(new CompanyCreateDto("Asu2", "test2", "test!"));
