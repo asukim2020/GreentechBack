@@ -40,6 +40,26 @@ public class MeasureDataQueryRepository {
                 .fetch();
     }
 
+    public List<MeasureDataDto> last(
+            Long dataLoggerId,
+            int count
+    ) {
+        if (count > 100) {
+            count = 100;
+        }
+        return queryFactory
+                .select(new QMeasureDataDto(
+                        measureData.data,
+                        measureData.createdTime
+                ))
+                .from(measureData)
+                .where(
+                        dataLoggerEq(dataLoggerId)
+                ).orderBy(measureData.createdTime.desc())
+                .limit(count)
+                .fetch();
+    }
+
     // TODO: - test 코드 => 지울 것
     public List<MeasureDataDto> searchAll(
             Long dataLoggerId

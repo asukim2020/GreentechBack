@@ -79,23 +79,23 @@ public class InitData {
                 count++;
             }
 
-            Long companyId2 = jwtUserDetailsService.create(new CompanyCreateDto("Asu2", "test2", "test!"));
+            Long companyId2 = jwtUserDetailsService.create(new CompanyCreateDto("NGI", "ngi", "ngi!"));
 
             List<Long> dataLoggerIds2 = new ArrayList<>();
             StringBuilder unit = new StringBuilder();
-            for(int j = 0; j < 10; j++){
+            for(int j = 0; j < 1; j++){
                 if (j != 0) {
                     unit.append(",");
                 }
                 unit.append(1);
             }
-            Long dataLoggerId2 = dataLoggerService.register(companyId2, new DataLoggerCreateDto("dataLogger", unit.toString(), ""));
+            Long dataLoggerId2 = dataLoggerService.register(companyId2, new DataLoggerCreateDto("데이터로거", unit.toString(), ""));
             dataLoggerIds2.add(dataLoggerId2);
 
             List<MeasureDataDto> dataDtos2 = new ArrayList<>();
-            for (int i = 0; i < 50; i++) {
+            for (int i = 0; i < 1; i++) {
                 ArrayList<String> datas = new ArrayList<>();
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < 3; j++) {
                     int data = (int) (Math.random() * 30);
                     datas.add(Integer.toString(data));
                 }

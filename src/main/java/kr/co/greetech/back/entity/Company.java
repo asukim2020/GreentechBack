@@ -3,6 +3,7 @@ package kr.co.greetech.back.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.co.greetech.back.Auditing.BaseTimeEntity;
 import kr.co.greetech.back.dto.CompanyCreateDto;
+import kr.co.greetech.back.dto.CompanyReadDto;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -40,6 +41,18 @@ public class Company extends BaseTimeEntity {
 
     public static Company create(CompanyCreateDto companyCreateDto) {
         return new Company(companyCreateDto);
+    }
+
+    public void update(CompanyReadDto companyReadDto) {
+        if (companyReadDto.getName() != null
+                && !companyReadDto.getName().equals("null")) {
+            this.name = companyReadDto.getName();
+        }
+
+        if (companyReadDto.getLoginPw() != null
+                && !companyReadDto.getLoginPw().equals("null")) {
+            this.loginPw = companyReadDto.getLoginPw();
+        }
     }
 }
 

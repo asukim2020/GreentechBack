@@ -50,6 +50,10 @@ public class MeasureDataService {
         );
     }
 
+    public List<MeasureDataDto> last(Long dataLoggerId, int count) {
+        return measureDataQueryRepository.last(dataLoggerId, count);
+    }
+
     // TODO: - test 코드 => 지울 것
     public List<MeasureDataDto> selectAll(
             Long dataLoggerId

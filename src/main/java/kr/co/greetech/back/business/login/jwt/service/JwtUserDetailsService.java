@@ -1,6 +1,7 @@
 package kr.co.greetech.back.business.login.jwt.service;
 
 import kr.co.greetech.back.dto.CompanyCreateDto;
+import kr.co.greetech.back.dto.CompanyReadDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,8 +12,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Profile("local")
 @Service
@@ -47,5 +50,21 @@ public class JwtUserDetailsService implements UserDetailsService {
         } else {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
+    }
+
+    @Transactional
+    public Long update(Long companyId, String username, CompanyReadDto companyReadDto) throws UsernameNotFoundException {
+        Company authCompany = companyRepository.findByLoginId(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Unauthorized"));
+
+        Company company = companyRepository.findById(companyId)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with companyId: " + companyId));
+
+        if (!authCompany.getId().equals(company.getId())) {
+            throw new UsernameNotFoundException("Unauthorized");
+        }
+
+        company.update(companyReadDto);
+        return company.getId();
     }
 }

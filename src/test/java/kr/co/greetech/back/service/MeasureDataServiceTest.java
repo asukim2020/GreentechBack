@@ -10,6 +10,7 @@ import kr.co.greetech.back.business.datalogger.repository.DataLoggerRepository;
 import kr.co.greetech.back.business.measuredata.repository.MeasureDataQueryRepository;
 import kr.co.greetech.back.business.measuredata.repository.MeasureDataRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -30,6 +31,8 @@ class MeasureDataServiceTest {
     MeasureDataRepository measureDataRepository;
     MeasureDataQueryRepository measureDataQueryRepository;
 
+    Long dataLoggerId = 0L;
+
     @Autowired
     public MeasureDataServiceTest(EntityManager entityManager, DataLoggerRepository dataLoggerRepository, MeasureDataRepository measureDataRepository) {
         this.em = entityManager;
@@ -40,13 +43,14 @@ class MeasureDataServiceTest {
         measureDataService = new MeasureDataService(dataLoggerRepository, measureDataRepository, measureDataQueryRepository);
     }
 
-    @Test
-    void addMeasureDataDtos() {
+    @BeforeEach
+    void beforeEach() {
         Company company = Company.create(new CompanyCreateDto("company", "abcdefg", "abcdefg1!"));
         em.persist(company);
 
         DataLogger dataLogger = DataLogger.create(new DataLoggerCreateDto("dataLogger", "", ""), company);
         dataLoggerRepository.save(dataLogger);
+        dataLoggerId = dataLogger.getId();
 
         List<MeasureDataDto> measureDataDtos = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -55,15 +59,24 @@ class MeasureDataServiceTest {
             );
         }
         measureDataService.addMeasureDataDtos(dataLogger.getId(), measureDataDtos);
+    }
 
+    @Test
+    void addMeasureDataDtos() {
         LocalDateTime start = LocalDateTime.now().minusDays(1);
         LocalDateTime end = LocalDateTime.now().plusDays(1);
         List<MeasureDataDto> dataDtos = measureDataService.select(
-                dataLogger.getId(),
+                dataLoggerId,
                 start,
                 end
         );
 
+        Assertions.assertThat(dataDtos.size()).isGreaterThan(0);
+    }
+
+    @Test
+    void last() {
+        List<MeasureDataDto> dataDtos = measureDataService.last(dataLoggerId, 10);
         Assertions.assertThat(dataDtos.size()).isGreaterThan(0);
     }
 }

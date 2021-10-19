@@ -40,6 +40,17 @@ public class MeasureDataController {
         return new Result<>(dataDtos.size(), dataDtos);
     }
 
+    @GetMapping("/last/{dataLoggerId}")
+    public Result<List<MeasureDataDto>> lastOne(
+            @PathVariable Long dataLoggerId,
+            @RequestParam int count,
+            HttpServletResponse response
+    ) {
+        response.setHeader("Cache-Control","no-store");
+        List<MeasureDataDto> dataDtos = measureDataService.last(dataLoggerId, count);
+       return new Result<>(dataDtos.size(), dataDtos);
+    }
+
     // TODO: - test 코드 => 지울 것
     @GetMapping("/all/{dataLoggerId}")
     public Result<List<MeasureDataDto>> selectAll(
