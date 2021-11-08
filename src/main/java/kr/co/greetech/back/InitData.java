@@ -75,7 +75,7 @@ public class InitData {
                     MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
                     dataDtos.add(measureDataDto);
                 }
-                measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
+//                measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
                 count++;
             }
 
@@ -107,7 +107,7 @@ public class InitData {
                 MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
                 dataDtos2.add(measureDataDto);
             }
-            measureDataService.addMeasureDataDtos(dataLoggerId2, dataDtos2);
+//            measureDataService.addMeasureDataDtos(dataLoggerId2, dataDtos2);
         }
     }
 

@@ -1,5 +1,6 @@
 package kr.co.greetech.back.service;
 
+import kr.co.greetech.back.business.login.jwt.repository.FcmTokenRepository;
 import kr.co.greetech.back.business.measuredata.service.MeasureDataService;
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
@@ -14,34 +15,37 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@DataJpaTest
+@SpringBootTest
+@Transactional
 class MeasureDataServiceTest {
 
-    MeasureDataService measureDataService;
+    @Autowired MeasureDataService measureDataService;
 
-    EntityManager em;
+    @Autowired EntityManager em;
 
-    DataLoggerRepository dataLoggerRepository;
-    MeasureDataRepository measureDataRepository;
-    MeasureDataQueryRepository measureDataQueryRepository;
+    @Autowired DataLoggerRepository dataLoggerRepository;
+//    MeasureDataRepository measureDataRepository;
+//    MeasureDataQueryRepository measureDataQueryRepository;
 
     Long dataLoggerId = 0L;
 
-    @Autowired
-    public MeasureDataServiceTest(EntityManager entityManager, DataLoggerRepository dataLoggerRepository, MeasureDataRepository measureDataRepository) {
-        this.em = entityManager;
-        this.dataLoggerRepository = dataLoggerRepository;
-        this.measureDataRepository = measureDataRepository;
-        this.measureDataQueryRepository = new MeasureDataQueryRepository(em);
-
-        measureDataService = new MeasureDataService(dataLoggerRepository, measureDataRepository, measureDataQueryRepository);
-    }
+//    @Autowired
+//    public MeasureDataServiceTest(EntityManager entityManager, DataLoggerRepository dataLoggerRepository, MeasureDataRepository measureDataRepository, FcmTokenRepository fcmTokenRepository, FirebaseApp firebaseApp) {
+//        this.em = entityManager;
+//        this.dataLoggerRepository = dataLoggerRepository;
+//        this.measureDataRepository = measureDataRepository;
+//        this.measureDataQueryRepository = new MeasureDataQueryRepository(em);
+//
+//        measureDataService = new MeasureDataService(dataLoggerRepository, measureDataRepository, measureDataQueryRepository, fcmTokenRepository, firebaseApp);
+//    }
 
     @BeforeEach
     void beforeEach() {

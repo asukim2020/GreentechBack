@@ -1,9 +1,11 @@
 package kr.co.greetech.back.business.login.jwt.service;
 
+import kr.co.greetech.back.business.login.jwt.repository.FcmTokenRepository;
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.CompanyReadDto;
 import kr.co.greetech.back.entity.Company;
 import kr.co.greetech.back.business.login.jwt.repository.CompanyRepository;
+import kr.co.greetech.back.entity.FcmToken;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.userdetails.User;
@@ -14,7 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Profile("local")
@@ -24,6 +28,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     private final CompanyRepository companyRepository;
     private final PasswordEncoder passwordEncoder;
+    private final FcmTokenRepository fcmTokenRepository;
 
     public Long create(CompanyCreateDto companyCreateDto) {
         Company company = Company.create(companyCreateDto);
@@ -50,6 +55,25 @@ public class JwtUserDetailsService implements UserDetailsService {
         } else {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
+    }
+
+    @Transactional
+    public Long addFcmToken(Long companyId, String fcmToken) {
+        Company company = companyRepository.findById(companyId)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with companyId: " + companyId));
+
+        Optional<FcmToken> fcmTokenOptional = fcmTokenRepository.findAllByCompanyIdAndFcmToken(companyId, fcmToken);
+        if (fcmTokenOptional.isPresent()) {
+            FcmToken token = fcmTokenOptional.get();
+            token.updateFcmToken(fcmToken);
+        } else {
+            FcmToken fcmTokenObj = FcmToken.create(company, fcmToken);
+            fcmTokenRepository.save(fcmTokenObj);
+        }
+
+        List<FcmToken> removeFcmTokenList = fcmTokenRepository.findAllByCompanyIdAndLastModifiedTimeLessThan(companyId, LocalDateTime.now().minusDays(14L));
+        fcmTokenRepository.deleteAll(removeFcmTokenList);
+        return company.getId();
     }
 
     @Transactional

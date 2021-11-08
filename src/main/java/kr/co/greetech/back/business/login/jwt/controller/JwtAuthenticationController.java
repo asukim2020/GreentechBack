@@ -69,6 +69,14 @@ public class JwtAuthenticationController {
         }
     }
 
+    @PostMapping("fcm/{companyId}")
+    public Long addFcmToken(
+            @PathVariable Long companyId,
+            @RequestParam String fcmToken
+    ) {
+        return userDetailsService.addFcmToken(companyId, fcmToken);
+    }
+
     @PostMapping("update/{companyId}")
     public Long update(
             @PathVariable Long companyId,
