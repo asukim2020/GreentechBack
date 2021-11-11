@@ -51,6 +51,19 @@ public class DataLoggerController {
         return dataLoggerService.update(dataLoggerReadDto);
     }
 
+    @PostMapping("updateBody/{companyId}")
+    public Long updateBody(
+            @Validated @RequestBody DataLoggerReadDto dataLoggerReadDto,
+            BindingResult bindingResult
+    ){
+        if (bindingResult.hasErrors()) {
+            log.warn("error={} ", bindingResult);
+            throw new IllegalArgumentException(ExceptionMsg.bindingMsg(bindingResult));
+        }
+
+        return dataLoggerService.update(dataLoggerReadDto);
+    }
+
     @Auth(role = NONE)
     @GetMapping
     public DataLoggerReadDto one(@RequestParam Long dataLoggerId) {
