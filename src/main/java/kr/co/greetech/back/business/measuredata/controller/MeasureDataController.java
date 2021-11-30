@@ -2,6 +2,7 @@ package kr.co.greetech.back.business.measuredata.controller;
 
 import kr.co.greetech.back.dto.MeasureDataDto;
 import kr.co.greetech.back.business.measuredata.service.MeasureDataService;
+import kr.co.greetech.back.util.Result;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -60,12 +61,5 @@ public class MeasureDataController {
         response.setHeader("Cache-Control","no-store");
         List<MeasureDataDto> dataDtos = measureDataService.selectAll(dataLoggerId);
         return new Result<>(dataDtos.size(), dataDtos);
-    }
-
-    @Data
-    @AllArgsConstructor
-    static class Result<T> {
-        private int count;
-        private T data;
     }
 }
