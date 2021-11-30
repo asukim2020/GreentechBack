@@ -1,5 +1,6 @@
 package kr.co.greetech.back;
 
+import kr.co.greetech.back.business.datalogger.type.DataLoggerType;
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.MeasureDataDto;
@@ -54,8 +55,17 @@ public class InitData {
                     unit.append(i + 1);
                     channel.append(i + 1);
                 }
-                Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), ""));
-                dataLoggerIds.add(dataLoggerId);
+
+                if (i == 0) {
+                    Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), "", "DYNAMIC"));
+                    dataLoggerIds.add(dataLoggerId);
+                } else if (i == 1) {
+                    Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), "STATIC"));
+                    dataLoggerIds.add(dataLoggerId);
+                } else {
+                    Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), "", "ALL"));
+                    dataLoggerIds.add(dataLoggerId);
+                }
             }
 
             int count = 0;
@@ -75,7 +85,7 @@ public class InitData {
                     MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
                     dataDtos.add(measureDataDto);
                 }
-//                measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
+                measureDataService.addMeasureDataDtos(dataLoggerId, dataDtos);
                 count++;
             }
 

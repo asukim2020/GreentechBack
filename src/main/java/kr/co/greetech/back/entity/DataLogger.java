@@ -2,6 +2,7 @@ package kr.co.greetech.back.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.co.greetech.back.Auditing.BaseTimeEntity;
+import kr.co.greetech.back.business.datalogger.type.DataLoggerType;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import lombok.*;
@@ -9,6 +10,8 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -37,6 +40,9 @@ public class DataLogger extends BaseTimeEntity {
     @Column(length = 1000)
     String channelName;
 
+    @Enumerated(EnumType.STRING)
+    DataLoggerType type;
+
 //    Boolean isUpdate;
 
     public static DataLogger create(DataLoggerCreateDto dataLoggerCreateDto, Company company) {
@@ -46,6 +52,7 @@ public class DataLogger extends BaseTimeEntity {
         dataLogger.company = company;
         dataLogger.unit = dataLoggerCreateDto.getUnit();
         dataLogger.channelName = dataLoggerCreateDto.getChannelName();
+        dataLogger.type = dataLoggerCreateDto.getType();
 
         return dataLogger;
     }
