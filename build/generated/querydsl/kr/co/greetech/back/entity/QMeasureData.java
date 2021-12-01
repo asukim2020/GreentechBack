@@ -28,6 +28,8 @@ public class QMeasureData extends EntityPathBase<MeasureData> {
 
     public final QDataLogger dataLogger;
 
+    public final NumberPath<Long> groupCount = createNumber("groupCount", Long.class);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public QMeasureData(String variable) {

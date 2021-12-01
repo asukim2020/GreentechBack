@@ -26,17 +26,30 @@ public class MeasureDataQueryRepository {
             LocalDateTime from,
             LocalDateTime to
     ) {
-        return queryFactory
-                .select(new QMeasureDataDto(
-                        measureData.data,
-                        measureData.createdTime
-                ))
-                .from(measureData)
+        long limit = 100L;
+        long count = queryFactory
+                .selectFrom(measureData)
                 .where(
                         dataLoggerEq(dataLoggerId),
                         crateTimeBetween(from, to)
+                )
+                .orderBy(measureData.createdTime.desc())
+                .fetchCount();
+
+        return queryFactory
+                .select(
+                        new QMeasureDataDto(
+                                measureData.data,
+                                measureData.createdTime
+                        )
+                )
+                .from(measureData)
+                .where(
+                        dataLoggerEq(dataLoggerId),
+                        crateTimeBetween(from, to),
+                        Mod(count, limit)
                 ).orderBy(measureData.createdTime.desc())
-                .limit(100)
+                .limit(limit)
                 .fetch();
     }
 
@@ -58,6 +71,17 @@ public class MeasureDataQueryRepository {
                 ).orderBy(measureData.createdTime.desc())
                 .limit(count)
                 .fetch();
+    }
+
+    public Long getGroupCount(
+            Long dataLoggerId
+    ) {
+        return queryFactory
+                .selectFrom(measureData)
+                .where(
+                        dataLoggerEq(dataLoggerId)
+                )
+                .fetchCount();
     }
 
     // TODO: - test 코드 => 지울 것
@@ -83,5 +107,14 @@ public class MeasureDataQueryRepository {
 
     private BooleanExpression crateTimeBetween(LocalDateTime start, LocalDateTime end) {
         return measureData.createdTime.between(start, end);
+    }
+
+    private BooleanExpression Mod(Long count, Long limit) {
+        if (count > limit) {
+            Long modCount = count / limit;
+            return measureData.groupCount.mod(modCount).eq(0L);
+        } else {
+            return null;
+        }
     }
 }

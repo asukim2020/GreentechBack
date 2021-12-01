@@ -60,7 +60,7 @@ public class InitData {
                     Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), "", "DYNAMIC"));
                     dataLoggerIds.add(dataLoggerId);
                 } else if (i == 1) {
-                    Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), "STATIC"));
+                    Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), ""));
                     dataLoggerIds.add(dataLoggerId);
                 } else {
                     Long dataLoggerId = dataLoggerService.register(companyId, new DataLoggerCreateDto("dataLogger" + (i + 1) + "(클릭)", unit.toString(), "", "ALL"));
@@ -71,10 +71,10 @@ public class InitData {
             int count = 0;
             for (Long dataLoggerId : dataLoggerIds) {
                 List<MeasureDataDto> dataDtos = new ArrayList<>();
-                for (int i = 0; i < 50; i++) {
+                for (int i = 0; i < 2000; i++) {
                     ArrayList<String> datas = new ArrayList<>();
-                    for (int j = 0; j < 5 - count; j++) {
-                        int data = (int) (Math.random() * 30);
+                    for (int j = 0; j < 4 - count; j++) {
+                        int data = (int) ((Math.random() * 30) + (j * 30));
                         datas.add(Integer.toString(data));
                     }
                     LocalDateTime date = LocalDateTime.now();
@@ -89,34 +89,34 @@ public class InitData {
                 count++;
             }
 
-            Long companyId2 = jwtUserDetailsService.create(new CompanyCreateDto("NGI", "ngi", "ngi!"));
-
-            List<Long> dataLoggerIds2 = new ArrayList<>();
-            StringBuilder unit = new StringBuilder();
-            for(int j = 0; j < 1; j++){
-                if (j != 0) {
-                    unit.append(",");
-                }
-                unit.append(1);
-            }
-            Long dataLoggerId2 = dataLoggerService.register(companyId2, new DataLoggerCreateDto("데이터로거", unit.toString(), ""));
-            dataLoggerIds2.add(dataLoggerId2);
-
-            List<MeasureDataDto> dataDtos2 = new ArrayList<>();
-            for (int i = 0; i < 1; i++) {
-                ArrayList<String> datas = new ArrayList<>();
-                for (int j = 0; j < 3; j++) {
-                    int data = (int) (Math.random() * 30);
-                    datas.add(Integer.toString(data));
-                }
-                LocalDateTime date = LocalDateTime.now();
-                date = date.minusNanos(date.getNano());
-                date = date.minusMinutes(date.getMinute());
-                date = date.minusSeconds(date.getSecond());
-                date = date.minusHours(i * 2);
-                MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
-                dataDtos2.add(measureDataDto);
-            }
+//            Long companyId2 = jwtUserDetailsService.create(new CompanyCreateDto("NGI", "ngi", "ngi!"));
+//
+//            List<Long> dataLoggerIds2 = new ArrayList<>();
+//            StringBuilder unit = new StringBuilder();
+//            for(int j = 0; j < 1; j++){
+//                if (j != 0) {
+//                    unit.append(",");
+//                }
+//                unit.append(1);
+//            }
+//            Long dataLoggerId2 = dataLoggerService.register(companyId2, new DataLoggerCreateDto("데이터로거", unit.toString(), ""));
+//            dataLoggerIds2.add(dataLoggerId2);
+//
+//            List<MeasureDataDto> dataDtos2 = new ArrayList<>();
+//            for (int i = 0; i < 1; i++) {
+//                ArrayList<String> datas = new ArrayList<>();
+//                for (int j = 0; j < 3; j++) {
+//                    int data = (int) (Math.random() * 30);
+//                    datas.add(Integer.toString(data));
+//                }
+//                LocalDateTime date = LocalDateTime.now();
+//                date = date.minusNanos(date.getNano());
+//                date = date.minusMinutes(date.getMinute());
+//                date = date.minusSeconds(date.getSecond());
+//                date = date.minusHours(i * 2);
+//                MeasureDataDto measureDataDto = new MeasureDataDto(String.join(",", datas), date);
+//                dataDtos2.add(measureDataDto);
+//            }
 //            measureDataService.addMeasureDataDtos(dataLoggerId2, dataDtos2);
         }
     }

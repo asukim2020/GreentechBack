@@ -30,6 +30,8 @@ public class MeasureData {
     @Column(nullable = false)
     String data;
 
+    Long groupCount;
+
     @NotNull(message = "MeasureData createdTime")
     @Column(updatable = false)
     private LocalDateTime createdTime;
@@ -40,6 +42,16 @@ public class MeasureData {
         measureData.data = measureDataDto.getData();
         measureData.dataLogger = dataLogger;
         measureData.createdTime = measureDataDto.getTime();
+        return measureData;
+    }
+
+    public static MeasureData create(MeasureDataDto measureDataDto, Long count, int index, DataLogger dataLogger) {
+        MeasureData measureData = new MeasureData();
+        measureData.id = null;
+        measureData.data = measureDataDto.getData();
+        measureData.dataLogger = dataLogger;
+        measureData.createdTime = measureDataDto.getTime();
+        measureData.groupCount = count + index;
         return measureData;
     }
 }

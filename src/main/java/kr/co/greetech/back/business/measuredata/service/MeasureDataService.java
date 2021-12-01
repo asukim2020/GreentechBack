@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Slf4j
 @Service
@@ -41,14 +42,17 @@ public class MeasureDataService {
         optionalDataLogger.orElseThrow(() -> new IllegalArgumentException("can't found data"));
 
         DataLogger dataLogger = optionalDataLogger.get();
-        List<MeasureData> measureDatas = measureDataDtos.stream()
-                .map(measureDataDto -> MeasureData.create(measureDataDto, dataLogger))
+        long count = measureDataQueryRepository.getGroupCount(dataLoggerId);
+
+        List<MeasureData> measureDatas = IntStream.range(0, measureDataDtos.size())
+                .mapToObj(i -> MeasureData.create(measureDataDtos.get(i), count, i, dataLogger))
                 .collect(Collectors.toList());
 
-        for (MeasureData measureData : measureDatas) {
-            measureDataRepository.save(measureData);
-        }
+//        List<MeasureData> measureDatas = measureDataDtos.stream()
+//                .map(measureDataDto -> MeasureData.create(measureDataDto, dataLogger))
+//                .collect(Collectors.toList());
 
+        measureDataRepository.saveAll(measureDatas);
         Long companyId = dataLogger.getCompany().getId();
         sendFcm(companyId, dataLogger.getId());
 
