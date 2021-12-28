@@ -1,5 +1,6 @@
 package kr.co.greetech.back.business.datalogger.service;
 
+import kr.co.greetech.back.business.datalogger.type.DataLoggerType;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import kr.co.greetech.back.entity.Company;
@@ -44,6 +45,13 @@ public class DataLoggerService {
 
     public List<DataLoggerReadDto> findByCompanyId(Long companyId) {
         List<DataLogger> dataLoggers = dataLoggerRepository.findByCompanyId(companyId);
+        return dataLoggers.stream()
+                .map(DataLoggerReadDto::new)
+                .collect(Collectors.toList());
+    }
+
+    public List<DataLoggerReadDto> findByCompanyIdAndType(Long companyId, DataLoggerType type) {
+        List<DataLogger> dataLoggers = dataLoggerRepository.findByCompanyIdAndType(companyId, type);
         return dataLoggers.stream()
                 .map(DataLoggerReadDto::new)
                 .collect(Collectors.toList());

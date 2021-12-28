@@ -1,5 +1,6 @@
 package kr.co.greetech.back.Auditing;
 
+import kr.co.greetech.back.business.datalogger.type.DataLoggerType;
 import kr.co.greetech.back.business.login.jwt.controller.JwtAuthenticationController;
 import kr.co.greetech.back.dto.CompanyCreateDto;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
@@ -51,5 +52,11 @@ class BaseTimeEntityTest {
         assertThat(savedMeasureData.getCreatedTime()).isNotNull();
 
         System.out.println("savedMeasureData.getCreatedTime() = " + savedMeasureData.getCreatedTime());
+    }
+
+    @Test
+    public void asdf() {
+        String type = "ALL";
+        DataLoggerType dataLoggerType = DataLoggerType.valueOf(type);
     }
 }

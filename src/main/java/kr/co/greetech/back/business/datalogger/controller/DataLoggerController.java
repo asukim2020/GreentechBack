@@ -1,6 +1,7 @@
 package kr.co.greetech.back.business.datalogger.controller;
 
 import kr.co.greetech.back.annotation.Auth;
+import kr.co.greetech.back.business.datalogger.type.DataLoggerType;
 import kr.co.greetech.back.dto.DataLoggerCreateDto;
 import kr.co.greetech.back.dto.DataLoggerReadDto;
 import kr.co.greetech.back.business.datalogger.service.DataLoggerService;
@@ -73,5 +74,14 @@ public class DataLoggerController {
     @GetMapping("/{companyId}")
     public List<DataLoggerReadDto> list(@PathVariable Long companyId) {
         return dataLoggerService.findByCompanyId(companyId);
+    }
+
+    @GetMapping("type/{companyId}")
+    public List<DataLoggerReadDto> listType(
+            @PathVariable Long companyId,
+            @RequestParam String type
+    ) {
+        DataLoggerType dataLoggerType = DataLoggerType.valueOf(type);
+        return dataLoggerService.findByCompanyIdAndType(companyId, dataLoggerType);
     }
 }

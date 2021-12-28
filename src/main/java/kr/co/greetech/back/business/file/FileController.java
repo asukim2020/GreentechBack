@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ import org.springframework.core.io.Resource;
 import java.io.IOException;
 import java.util.List;
 
+@Profile("local")
 @Slf4j
 @RestController
 @RequiredArgsConstructor

@@ -26,7 +26,7 @@ public class MeasureDataQueryRepository {
             LocalDateTime from,
             LocalDateTime to
     ) {
-        long limit = 100L;
+        long limit = 200L;
         long count = queryFactory
                 .selectFrom(measureData)
                 .where(
@@ -57,8 +57,8 @@ public class MeasureDataQueryRepository {
             Long dataLoggerId,
             int count
     ) {
-        if (count > 100) {
-            count = 100;
+        if (count > 200) {
+            count = 200;
         }
         return queryFactory
                 .select(new QMeasureDataDto(
