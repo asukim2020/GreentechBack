@@ -26,7 +26,7 @@ public class MeasureDataQueryRepository {
             LocalDateTime from,
             LocalDateTime to
     ) {
-        long limit = 200L;
+        long limit = 1000L;
         long count = queryFactory
                 .selectFrom(measureData)
                 .where(
@@ -53,12 +53,37 @@ public class MeasureDataQueryRepository {
                 .fetch();
     }
 
+    public List<MeasureDataDto> download(
+            Long dataLoggerId,
+            LocalDateTime from,
+            LocalDateTime to,
+            Long offset
+    ) {
+        long limit = 1000L;
+        return queryFactory
+                .select(
+                        new QMeasureDataDto(
+                                measureData.data,
+                                measureData.createdTime
+                        )
+                )
+                .from(measureData)
+                .where(
+                        dataLoggerEq(dataLoggerId),
+                        crateTimeBetween(from, to)
+                )
+                .orderBy(measureData.createdTime.desc())
+                .offset(offset)
+                .limit(limit)
+                .fetch();
+    }
+
     public List<MeasureDataDto> last(
             Long dataLoggerId,
             int count
     ) {
-        if (count > 200) {
-            count = 200;
+        if (count > 1000) {
+            count = 1000;
         }
         return queryFactory
                 .select(new QMeasureDataDto(
@@ -97,7 +122,7 @@ public class MeasureDataQueryRepository {
                 .where(
                         dataLoggerEq(dataLoggerId)
                 ).orderBy(measureData.createdTime.desc())
-                .limit(100)
+                .limit(1000)
                 .fetch();
     }
 

@@ -43,6 +43,9 @@ public class DataLogger extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     DataLoggerType type;
 
+    @Column(length = 50)
+    String ip;
+
 //    Boolean isUpdate;
 
     public static DataLogger create(DataLoggerCreateDto dataLoggerCreateDto, Company company) {
@@ -53,24 +56,30 @@ public class DataLogger extends BaseTimeEntity {
         dataLogger.unit = dataLoggerCreateDto.getUnit();
         dataLogger.channelName = dataLoggerCreateDto.getChannelName();
         dataLogger.type = dataLoggerCreateDto.getType();
+        dataLogger.ip = dataLoggerCreateDto.getIp();
 
         return dataLogger;
     }
 
     public void update(DataLoggerReadDto dataLoggerReadDto) {
-        if (dataLoggerReadDto.getModelName() != null
-                && !dataLoggerReadDto.getModelName().equals("null")) {
-            this.modelName = dataLoggerReadDto.getModelName();
+        String modelName = dataLoggerReadDto.getModelName();
+        if (modelName != null && !modelName.equals("null")) {
+            this.modelName = modelName;
         }
 
-        if (dataLoggerReadDto.getUnit() != null
-                && !dataLoggerReadDto.getUnit().equals("null")) {
-            this.unit = dataLoggerReadDto.getUnit();
+        String unit = dataLoggerReadDto.getUnit();
+        if (unit != null && !unit.equals("null")) {
+            this.unit = unit;
         }
 
-        if (dataLoggerReadDto.getChannelName() != null
-                && !dataLoggerReadDto.getChannelName().equals("null")) {
-            this.channelName = dataLoggerReadDto.getChannelName();
+        String channelName = dataLoggerReadDto.getChannelName();
+        if (channelName != null && !channelName.equals("null")) {
+            this.channelName = channelName;
+        }
+
+        String ip = dataLoggerReadDto.getIp();
+        if (ip != null && !ip.equals("null")) {
+            this.ip = ip;
         }
     }
 }

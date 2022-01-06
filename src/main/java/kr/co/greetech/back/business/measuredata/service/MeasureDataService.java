@@ -71,6 +71,20 @@ public class MeasureDataService {
         );
     }
 
+    public List<MeasureDataDto> download(
+            Long dataLoggerId,
+            LocalDateTime from,
+            LocalDateTime to,
+            Long offset
+    ) {
+        return measureDataQueryRepository.download(
+                dataLoggerId,
+                from,
+                to,
+                offset
+        );
+    }
+
     private void sendFcm(Long companyId, Long dataLoggerId) {
         List<FcmToken> fcmTokenList = fcmTokenRepository.findAllByCompanyId(companyId);
         if (fcmTokenList.isEmpty()) return;

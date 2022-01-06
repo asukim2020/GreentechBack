@@ -41,6 +41,19 @@ public class MeasureDataController {
         return new Result<>(dataDtos.size(), dataDtos);
     }
 
+    @GetMapping("/download/{dataLoggerId}")
+    public Result<List<MeasureDataDto>> download(
+            @PathVariable Long dataLoggerId,
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime from,
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS") LocalDateTime to,
+            @RequestParam Long offset,
+            HttpServletResponse response
+    ) {
+        response.setHeader("Cache-Control","no-store");
+        List<MeasureDataDto> dataDtos = measureDataService.download(dataLoggerId, from, to, offset);
+        return new Result<>(dataDtos.size(), dataDtos);
+    }
+
     @GetMapping("/last/{dataLoggerId}")
     public Result<List<MeasureDataDto>> lastOne(
             @PathVariable Long dataLoggerId,

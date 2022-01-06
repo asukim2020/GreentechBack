@@ -15,6 +15,7 @@ public class DataLoggerReadDto {
     String unit;
     String channelName;
     String type;
+    String ip;
 
     public DataLoggerReadDto(DataLogger dataLogger) {
         id = dataLogger.getId();
@@ -22,5 +23,6 @@ public class DataLoggerReadDto {
         unit = dataLogger.getUnit();
         channelName = dataLogger.getChannelName();
         type = dataLogger.getType().toString();
+        ip = dataLogger.getIp();
     }
 }

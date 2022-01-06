@@ -27,17 +27,21 @@ public class DataLoggerCreateDto {
 
     DataLoggerType type;
 
+    String ip;
+
     public DataLoggerCreateDto(String modelName, String unit, String channelName) {
         this.modelName = modelName;
         this.unit = unit;
         this.channelName = channelName;
         this.type = DataLoggerType.STATIC;
+        this.ip = "";
     }
 
     public DataLoggerCreateDto(String modelName, String unit, String channelName, String type) {
         this.modelName = modelName;
         this.unit = unit;
         this.channelName = channelName;
+        this.ip = "";
         switch (type) {
             case "dynamic":
             case "DYNAMIC":
