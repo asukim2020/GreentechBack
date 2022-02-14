@@ -46,10 +46,10 @@ public class DataLogger extends BaseTimeEntity {
     @Column(length = 50)
     String ip;
 
-    @Column
+    @Column(name = "DATA_LOGGER_REQUEST")
     String request;
 
-    @Column
+    @Column(name = "DATA_LOGGER_TRIGGER")
     String trigger;
 
 //    Boolean isUpdate;

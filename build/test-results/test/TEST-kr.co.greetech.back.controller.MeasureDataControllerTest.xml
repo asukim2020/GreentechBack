@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="kr.co.greetech.back.controller.MeasureDataControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-02-14T02:42:25" hostname="LAPTOP-JLJ2VI1H" time="0.919">
+<testsuite name="kr.co.greetech.back.controller.MeasureDataControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-02-14T05:26:12" hostname="LAPTOP-JLJ2VI1H" time="0.43">
   <properties/>
-  <testcase name="select()" classname="kr.co.greetech.back.controller.MeasureDataControllerTest" time="0.788"/>
-  <testcase name="add()" classname="kr.co.greetech.back.controller.MeasureDataControllerTest" time="0.128"/>
-  <system-out><![CDATA[2022-02-14 11:42:25.637  INFO 14072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [kr.co.greetech.back.controller.MeasureDataControllerTest], using SpringBootContextLoader
-2022-02-14 11:42:25.641  INFO 14072 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [kr.co.greetech.back.controller.MeasureDataControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2022-02-14 11:42:25.642  INFO 14072 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [kr.co.greetech.back.controller.MeasureDataControllerTest]: MeasureDataControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2022-02-14 11:42:25.652  INFO 14072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration kr.co.greetech.back.BackApplication for test class kr.co.greetech.back.controller.MeasureDataControllerTest
-2022-02-14 11:42:25.659  INFO 14072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2022-02-14 11:42:25.660  INFO 14072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@414b785c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4fe0aa21, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7d1f906b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@22fb3dde, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@38682845, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72933ccb, org.springframework.test.context.transaction.TransactionalTestExecutionListener@730e663a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@8e0b048, org.springframework.test.context.event.EventPublishingTestExecutionListener@71b38b11, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1a2d8488, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1a120e41, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@17fd9fbb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7a7b6556, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@c04b755, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6eec092]
-2022-02-14 11:42:25.680  INFO 14072 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5680228 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@5411a529, testMethod = select@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e43235 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@4044f07b key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, printOnlyOnFailure=true, addFilters=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@6ad2a8db]; rollback [true]
-2022-02-14 11:42:25.687 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+  <testcase name="select()" classname="kr.co.greetech.back.controller.MeasureDataControllerTest" time="0.343"/>
+  <testcase name="add()" classname="kr.co.greetech.back.controller.MeasureDataControllerTest" time="0.086"/>
+  <system-out><![CDATA[2022-02-14 14:26:12.374  INFO 4556 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [kr.co.greetech.back.controller.MeasureDataControllerTest], using SpringBootContextLoader
+2022-02-14 14:26:12.376  INFO 4556 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [kr.co.greetech.back.controller.MeasureDataControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-14 14:26:12.376  INFO 4556 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [kr.co.greetech.back.controller.MeasureDataControllerTest]: MeasureDataControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-02-14 14:26:12.380  INFO 4556 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration kr.co.greetech.back.BackApplication for test class kr.co.greetech.back.controller.MeasureDataControllerTest
+2022-02-14 14:26:12.383  INFO 4556 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-14 14:26:12.384  INFO 4556 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@46984524, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@65a86de0, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@745e1fb7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4d484961, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@497d9489, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f9c272b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6bbb3ec8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@64b7719f, org.springframework.test.context.event.EventPublishingTestExecutionListener@414b785c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4fe0aa21, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7d1f906b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@22fb3dde, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@38682845, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@72933ccb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@730e663a]
+2022-02-14 14:26:12.390  INFO 4556 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1a120e41 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@17fd9fbb, testMethod = select@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7a7b6556 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@c04b755 key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, addFilters=true, printOnlyOnFailure=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@518d4537]; rollback [true]
+2022-02-14 14:26:12.393 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:25.689  INFO 14072 --- [    Test worker] p6spy                                    : #1644806545689 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.394  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372394 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:25.691 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.395 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:25.693  INFO 14072 --- [    Test worker] p6spy                                    : #1644806545693 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.395  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372395 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.042 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.554 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         count(measureData) 
     from
@@ -32,39 +32,39 @@ call next value for hibernate_sequence;
             measure_data measuredat0_ 
         where
             measuredat0_.data_logger_id=?
-2022-02-14 11:42:26.107  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546107 | took 10ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.555  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372555 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* select count(measureData)
 from MeasureData measureData
 where measureData.dataLogger.id = ?1 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=?
 /* select count(measureData)
 from MeasureData measureData
 where measureData.dataLogger.id = 91 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=NULL;
-2022-02-14 11:42:26.116 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.560 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.118  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546118 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.561  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372561 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.119 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.562 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.120  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546120 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.562  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372562 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.122 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.563 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.123  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546123 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.563  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372563 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.125 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.564 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.126  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546126 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.565  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372565 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.128 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.565 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.129  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546129 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.566  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372566 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.142 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.571 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.Company
         */ insert 
         into
@@ -72,21 +72,21 @@ call next value for hibernate_sequence;
             (created_time, last_modified_time, login_id, login_pw, name, company_id) 
         values
             (?, ?, ?, ?, ?, ?)
-2022-02-14 11:42:26.146  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546146 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.572  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372572 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.Company */ insert into company (created_time, last_modified_time, login_id, login_pw, name, company_id) values (?, ?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.Company */ insert into company (created_time, last_modified_time, login_id, login_pw, name, company_id) values ('2022-02-14T11:42:25.687+0900', '2022-02-14T11:42:25.687+0900', 'abcdefg', 'abcdefg1!', 'company', 8);
-2022-02-14 11:42:26.148 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.Company */ insert into company (created_time, last_modified_time, login_id, login_pw, name, company_id) values ('2022-02-14T14:26:12.393+0900', '2022-02-14T14:26:12.393+0900', 'abcdefg', 'abcdefg1!', 'company', 8);
+2022-02-14 14:26:12.573 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.DataLogger
         */ insert 
         into
             data_logger
-            (created_time, last_modified_time, channel_name, company_id, ip, model_name, request, trigger, type, unit, data_logger_id) 
+            (created_time, last_modified_time, channel_name, company_id, ip, model_name, data_logger_request, data_logger_trigger, type, unit, data_logger_id) 
         values
             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-2022-02-14 11:42:26.153  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546153 | took 1ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
-/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, request, trigger, type, unit, data_logger_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, request, trigger, type, unit, data_logger_id) values ('2022-02-14T11:42:25.691+0900', '2022-02-14T11:42:25.691+0900', '', 8, '', 'dataLogger', '', '', 'STATIC', '', 9);
-2022-02-14 11:42:26.155 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.577  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372577 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, data_logger_request, data_logger_trigger, type, unit, data_logger_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, data_logger_request, data_logger_trigger, type, unit, data_logger_id) values ('2022-02-14T14:26:12.394+0900', '2022-02-14T14:26:12.394+0900', '', 8, '', 'dataLogger', '', '', 'STATIC', '', 9);
+2022-02-14 14:26:12.577 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -94,10 +94,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.158  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546158 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.578  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372578 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:25.696+0900', 'data0', 9, 0, 10);
-2022-02-14 11:42:26.159 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.396+0900', 'data0', 9, 0, 10);
+2022-02-14 14:26:12.579 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -105,10 +105,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.162  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546162 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.580  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372580 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:25.696+0900', 'data1', 9, 1, 11);
-2022-02-14 11:42:26.164 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.396+0900', 'data1', 9, 1, 11);
+2022-02-14 14:26:12.581 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -116,10 +116,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.167  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546167 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.582  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372582 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:25.696+0900', 'data2', 9, 2, 12);
-2022-02-14 11:42:26.168 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.396+0900', 'data2', 9, 2, 12);
+2022-02-14 14:26:12.583 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -127,10 +127,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.171  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546171 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.584  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372584 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:25.696+0900', 'data3', 9, 3, 13);
-2022-02-14 11:42:26.172 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.396+0900', 'data3', 9, 3, 13);
+2022-02-14 14:26:12.584 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -138,10 +138,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.175  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546175 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.586  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372586 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:25.696+0900', 'data4', 9, 4, 14);
-2022-02-14 11:42:26.176 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.396+0900', 'data4', 9, 4, 14);
+2022-02-14 14:26:12.586 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         generatedAlias0 
     from
@@ -162,11 +162,11 @@ call next value for hibernate_sequence;
                 on fcmtoken0_.company_id=company1_.company_id 
         where
             company1_.company_id=?
-2022-02-14 11:42:26.179  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546179 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.587  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372587 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* select generatedAlias0 from FcmToken as generatedAlias0 left join generatedAlias0.company as generatedAlias1 where generatedAlias1.id=:param0 */ select fcmtoken0_.fcm_token_id as fcm_toke1_2_, fcmtoken0_.created_time as created_2_2_, fcmtoken0_.last_modified_time as last_mod3_2_, fcmtoken0_.company_id as company_5_2_, fcmtoken0_.fcm_token as fcm_toke4_2_ from fcm_token fcmtoken0_ left outer join company company1_ on fcmtoken0_.company_id=company1_.company_id where company1_.company_id=?
 /* select generatedAlias0 from FcmToken as generatedAlias0 left join generatedAlias0.company as generatedAlias1 where generatedAlias1.id=:param0 */ select fcmtoken0_.fcm_token_id as fcm_toke1_2_, fcmtoken0_.created_time as created_2_2_, fcmtoken0_.last_modified_time as last_mod3_2_, fcmtoken0_.company_id as company_5_2_, fcmtoken0_.fcm_token as fcm_toke4_2_ from fcm_token fcmtoken0_ left outer join company company1_ on fcmtoken0_.company_id=company1_.company_id where company1_.company_id=8;
-start date: 2022-02-13T11:42:26.181
-2022-02-14 11:42:26.220 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+start date: 2022-02-13T14:26:12.588
+2022-02-14 14:26:12.609 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         count(measureData) 
     from
@@ -182,14 +182,14 @@ start date: 2022-02-13T11:42:26.181
             and (
                 measuredat0_.created_time between ? and ?
             )
-2022-02-14 11:42:26.225  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546225 | took 1ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.611  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372611 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* select count(measureData)
 from MeasureData measureData
 where measureData.dataLogger.id = ?1 and measureData.createdTime between ?2 and ?3 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=? and (measuredat0_.created_time between ? and ?)
 /* select count(measureData)
 from MeasureData measureData
-where measureData.dataLogger.id = 91 and measureData.createdTime between '2022-02-13T11:42:26.181+0900'2 and '2022-02-15T11:42:26.181+0900'3 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=NULL and (measuredat0_.created_time between ? and ?);
-2022-02-14 11:42:26.277 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+where measureData.dataLogger.id = 91 and measureData.createdTime between '2022-02-13T14:26:12.588+0900'2 and '2022-02-15T14:26:12.588+0900'3 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=NULL and (measuredat0_.created_time between ? and ?);
+2022-02-14 14:26:12.640 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         measureData.data,
         measureData.createdTime 
@@ -211,31 +211,31 @@ where measureData.dataLogger.id = 91 and measureData.createdTime between '2022-0
             ) 
         order by
             measuredat0_.created_time desc limit ?
-2022-02-14 11:42:26.282  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546282 | took 2ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.643  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372643 | took 0ms | statement | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 /* select measureData.data, measureData.createdTime
 from MeasureData measureData
 where measureData.dataLogger.id = ?1 and measureData.createdTime between ?2 and ?3
 order by measureData.createdTime desc */ select measuredat0_.data as col_0_0_, measuredat0_.created_time as col_1_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=? and (measuredat0_.created_time between ? and ?) order by measuredat0_.created_time desc limit ?
 /* select measureData.data, measureData.createdTime
 from MeasureData measureData
-where measureData.dataLogger.id = 91 and measureData.createdTime between '2022-02-13T11:42:26.181+0900'2 and '2022-02-15T11:42:26.181+0900'3
+where measureData.dataLogger.id = 91 and measureData.createdTime between '2022-02-13T14:26:12.588+0900'2 and '2022-02-15T14:26:12.588+0900'3
 order by measureData.createdTime desc */ select measuredat0_.data as col_0_0_, measuredat0_.created_time as col_1_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=1000 and (measuredat0_.created_time between NULL and ?) order by measuredat0_.created_time desc limit ?;
-2022-02-14 11:42:26.460  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546460 | took 1ms | rollback | connection 11| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.729  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372729 | took 0ms | rollback | connection 11| url jdbc:h2:tcp://localhost/~/greentech
 
 ;
-2022-02-14 11:42:26.462  INFO 14072 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5680228 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@5411a529, testMethod = select@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e43235 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@4044f07b key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, printOnlyOnFailure=true, addFilters=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
-2022-02-14 11:42:26.470  INFO 14072 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5680228 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@3fe8d57a, testMethod = add@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e43235 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@4044f07b key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, printOnlyOnFailure=true, addFilters=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@6ad2a8db]; rollback [true]
-2022-02-14 11:42:26.477 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.730  INFO 4556 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1a120e41 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@17fd9fbb, testMethod = select@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7a7b6556 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@c04b755 key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, addFilters=true, printOnlyOnFailure=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-02-14 14:26:12.736  INFO 4556 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1a120e41 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@623dc959, testMethod = add@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7a7b6556 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@c04b755 key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, addFilters=true, printOnlyOnFailure=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@518d4537]; rollback [true]
+2022-02-14 14:26:12.740 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.478  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546478 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.741  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372741 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.480 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.743 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.481  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546481 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.743  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372743 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.537 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.779 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         count(measureData) 
     from
@@ -247,39 +247,39 @@ call next value for hibernate_sequence;
             measure_data measuredat0_ 
         where
             measuredat0_.data_logger_id=?
-2022-02-14 11:42:26.539  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546539 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.780  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372780 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* select count(measureData)
 from MeasureData measureData
 where measureData.dataLogger.id = ?1 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=?
 /* select count(measureData)
 from MeasureData measureData
 where measureData.dataLogger.id = 161 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=NULL;
-2022-02-14 11:42:26.540 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.780 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.540  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546540 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.781  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372781 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.541 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.781 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.542  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546542 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.782  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372782 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.543 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.782 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.543  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546543 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.783  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372783 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.544 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.784 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.545  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546545 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.784  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372784 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.546 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.785 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     call next value for hibernate_sequence
-2022-02-14 11:42:26.547  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546547 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.785  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372785 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-2022-02-14 11:42:26.550 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.787 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.Company
         */ insert 
         into
@@ -287,21 +287,21 @@ call next value for hibernate_sequence;
             (created_time, last_modified_time, login_id, login_pw, name, company_id) 
         values
             (?, ?, ?, ?, ?, ?)
-2022-02-14 11:42:26.552  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546552 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.788  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372788 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.Company */ insert into company (created_time, last_modified_time, login_id, login_pw, name, company_id) values (?, ?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.Company */ insert into company (created_time, last_modified_time, login_id, login_pw, name, company_id) values ('2022-02-14T11:42:26.476+0900', '2022-02-14T11:42:26.476+0900', 'abcdefg', 'abcdefg1!', 'company', 15);
-2022-02-14 11:42:26.553 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.Company */ insert into company (created_time, last_modified_time, login_id, login_pw, name, company_id) values ('2022-02-14T14:26:12.739+0900', '2022-02-14T14:26:12.739+0900', 'abcdefg', 'abcdefg1!', 'company', 15);
+2022-02-14 14:26:12.788 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.DataLogger
         */ insert 
         into
             data_logger
-            (created_time, last_modified_time, channel_name, company_id, ip, model_name, request, trigger, type, unit, data_logger_id) 
+            (created_time, last_modified_time, channel_name, company_id, ip, model_name, data_logger_request, data_logger_trigger, type, unit, data_logger_id) 
         values
             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-2022-02-14 11:42:26.555  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546555 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
-/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, request, trigger, type, unit, data_logger_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, request, trigger, type, unit, data_logger_id) values ('2022-02-14T11:42:26.479+0900', '2022-02-14T11:42:26.479+0900', '', 15, '', 'dataLogger', '', '', 'STATIC', '', 16);
-2022-02-14 11:42:26.556 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.790  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372790 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, data_logger_request, data_logger_trigger, type, unit, data_logger_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+/* insert kr.co.greetech.back.entity.DataLogger */ insert into data_logger (created_time, last_modified_time, channel_name, company_id, ip, model_name, data_logger_request, data_logger_trigger, type, unit, data_logger_id) values ('2022-02-14T14:26:12.742+0900', '2022-02-14T14:26:12.742+0900', '', 15, '', 'dataLogger', '', '', 'STATIC', '', 16);
+2022-02-14 14:26:12.791 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -309,10 +309,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.558  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546558 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.793  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372793 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:26.482+0900', 'data0', 16, 0, 17);
-2022-02-14 11:42:26.559 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.744+0900', 'data0', 16, 0, 17);
+2022-02-14 14:26:12.793 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -320,10 +320,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.560  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546560 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.794  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372794 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:26.482+0900', 'data1', 16, 1, 18);
-2022-02-14 11:42:26.561 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.744+0900', 'data1', 16, 1, 18);
+2022-02-14 14:26:12.795 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -331,10 +331,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.563  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546563 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.796  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372796 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:26.482+0900', 'data2', 16, 2, 19);
-2022-02-14 11:42:26.564 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.744+0900', 'data2', 16, 2, 19);
+2022-02-14 14:26:12.796 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -342,10 +342,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.565  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546565 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.797  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372797 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:26.482+0900', 'data3', 16, 3, 20);
-2022-02-14 11:42:26.566 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.744+0900', 'data3', 16, 3, 20);
+2022-02-14 14:26:12.798 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* insert kr.co.greetech.back.entity.MeasureData
         */ insert 
         into
@@ -353,10 +353,10 @@ call next value for hibernate_sequence;
             (created_time, data, data_logger_id, group_count, measure_data_id) 
         values
             (?, ?, ?, ?, ?)
-2022-02-14 11:42:26.567  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546567 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.799  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372799 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values (?, ?, ?, ?, ?)
-/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T11:42:26.482+0900', 'data4', 16, 4, 21);
-2022-02-14 11:42:26.568 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+/* insert kr.co.greetech.back.entity.MeasureData */ insert into measure_data (created_time, data, data_logger_id, group_count, measure_data_id) values ('2022-02-14T14:26:12.744+0900', 'data4', 16, 4, 21);
+2022-02-14 14:26:12.799 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         generatedAlias0 
     from
@@ -377,10 +377,10 @@ call next value for hibernate_sequence;
                 on fcmtoken0_.company_id=company1_.company_id 
         where
             company1_.company_id=?
-2022-02-14 11:42:26.570  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546570 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.800  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372800 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* select generatedAlias0 from FcmToken as generatedAlias0 left join generatedAlias0.company as generatedAlias1 where generatedAlias1.id=:param0 */ select fcmtoken0_.fcm_token_id as fcm_toke1_2_, fcmtoken0_.created_time as created_2_2_, fcmtoken0_.last_modified_time as last_mod3_2_, fcmtoken0_.company_id as company_5_2_, fcmtoken0_.fcm_token as fcm_toke4_2_ from fcm_token fcmtoken0_ left outer join company company1_ on fcmtoken0_.company_id=company1_.company_id where company1_.company_id=?
 /* select generatedAlias0 from FcmToken as generatedAlias0 left join generatedAlias0.company as generatedAlias1 where generatedAlias1.id=:param0 */ select fcmtoken0_.fcm_token_id as fcm_toke1_2_, fcmtoken0_.created_time as created_2_2_, fcmtoken0_.last_modified_time as last_mod3_2_, fcmtoken0_.company_id as company_5_2_, fcmtoken0_.fcm_token as fcm_toke4_2_ from fcm_token fcmtoken0_ left outer join company company1_ on fcmtoken0_.company_id=company1_.company_id where company1_.company_id=15;
-2022-02-14 11:42:26.574 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+2022-02-14 14:26:12.803 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         count(measureData) 
     from
@@ -396,14 +396,14 @@ call next value for hibernate_sequence;
             and (
                 measuredat0_.created_time between ? and ?
             )
-2022-02-14 11:42:26.577  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546577 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.805  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372805 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* select count(measureData)
 from MeasureData measureData
 where measureData.dataLogger.id = ?1 and measureData.createdTime between ?2 and ?3 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=? and (measuredat0_.created_time between ? and ?)
 /* select count(measureData)
 from MeasureData measureData
-where measureData.dataLogger.id = 161 and measureData.createdTime between '2022-02-13T11:42:26.572+0900'2 and '2022-02-15T11:42:26.572+0900'3 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=NULL and (measuredat0_.created_time between ? and ?);
-2022-02-14 11:42:26.579 DEBUG 14072 --- [    Test worker] org.hibernate.SQL                        : 
+where measureData.dataLogger.id = 161 and measureData.createdTime between '2022-02-13T14:26:12.802+0900'2 and '2022-02-15T14:26:12.802+0900'3 */ select count(measuredat0_.measure_data_id) as col_0_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=NULL and (measuredat0_.created_time between ? and ?);
+2022-02-14 14:26:12.809 DEBUG 4556 --- [    Test worker] org.hibernate.SQL                        : 
     /* select
         measureData.data,
         measureData.createdTime 
@@ -425,19 +425,19 @@ where measureData.dataLogger.id = 161 and measureData.createdTime between '2022-
             ) 
         order by
             measuredat0_.created_time desc limit ?
-2022-02-14 11:42:26.582  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546582 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.811  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372811 | took 0ms | statement | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 /* select measureData.data, measureData.createdTime
 from MeasureData measureData
 where measureData.dataLogger.id = ?1 and measureData.createdTime between ?2 and ?3
 order by measureData.createdTime desc */ select measuredat0_.data as col_0_0_, measuredat0_.created_time as col_1_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=? and (measuredat0_.created_time between ? and ?) order by measuredat0_.created_time desc limit ?
 /* select measureData.data, measureData.createdTime
 from MeasureData measureData
-where measureData.dataLogger.id = 161 and measureData.createdTime between '2022-02-13T11:42:26.572+0900'2 and '2022-02-15T11:42:26.572+0900'3
+where measureData.dataLogger.id = 161 and measureData.createdTime between '2022-02-13T14:26:12.802+0900'2 and '2022-02-15T14:26:12.802+0900'3
 order by measureData.createdTime desc */ select measuredat0_.data as col_0_0_, measuredat0_.created_time as col_1_0_ from measure_data measuredat0_ where measuredat0_.data_logger_id=1000 and (measuredat0_.created_time between NULL and ?) order by measuredat0_.created_time desc limit ?;
-2022-02-14 11:42:26.591  INFO 14072 --- [    Test worker] p6spy                                    : #1644806546591 | took 0ms | rollback | connection 12| url jdbc:h2:tcp://localhost/~/greentech
+2022-02-14 14:26:12.816  INFO 4556 --- [    Test worker] p6spy                                    : #1644816372816 | took 0ms | rollback | connection 12| url jdbc:h2:tcp://localhost/~/greentech
 
 ;
-2022-02-14 11:42:26.593  INFO 14072 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5680228 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@3fe8d57a, testMethod = add@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@20e43235 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@4044f07b key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, printOnlyOnFailure=true, addFilters=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-02-14 14:26:12.817  INFO 4556 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@1a120e41 testClass = MeasureDataControllerTest, testInstance = kr.co.greetech.back.controller.MeasureDataControllerTest@623dc959, testMethod = add@MeasureDataControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7a7b6556 testClass = MeasureDataControllerTest, locations = '{}', classes = '{class kr.co.greetech.back.BackApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@59d2103b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@72a85671, [ImportsContextCustomizer@c04b755 key = [@org.apiguardian.api.API(consumers={"*"}, since="5.0", status=STABLE), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper.class), @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc(webDriverEnabled=true, print=DEFAULT, webClientEnabled=true, addFilters=true, printOnlyOnFailure=true), @org.springframework.boot.test.autoconfigure.properties.PropertyMapping(value="spring.test.mockmvc", skip=NO), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.class}), @org.springframework.boot.test.context.SpringBootTest(args={}, webEnvironment=MOCK, value={}, properties={}, classes={}), @org.junit.jupiter.api.extension.ExtendWith(value={org.springframework.test.context.junit.jupiter.SpringExtension.class}), @org.springframework.boot.autoconfigure.EnableAutoConfiguration(excludeName={}, exclude={org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}), @org.springframework.boot.autoconfigure.ImportAutoConfiguration(value={}, exclude={}, classes={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar.class}), @org.springframework.boot.autoconfigure.AutoConfigurationPackage(basePackages={}, basePackageClasses={}), @org.springframework.context.annotation.Import(value={org.springframework.boot.autoconfigure.ImportAutoConfigurationImportSelector.class}), @org.springframework.transaction.annotation.Transactional(propagation=REQUIRED, rollbackForClassName={}, readOnly=false, transactionManager="", isolation=DEFAULT, timeoutString="", label={}, noRollbackFor={}, noRollbackForClassName={}, value="", timeout=-1, rollbackFor={})]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ae33a11, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3a94964, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3185fa6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7cb502c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
