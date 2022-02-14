@@ -40,6 +40,10 @@ public class QDataLogger extends EntityPathBase<DataLogger> {
 
     public final StringPath modelName = createString("modelName");
 
+    public final StringPath request = createString("request");
+
+    public final StringPath trigger = createString("trigger");
+
     public final EnumPath<kr.co.greetech.back.business.datalogger.type.DataLoggerType> type = createEnum("type", kr.co.greetech.back.business.datalogger.type.DataLoggerType.class);
 
     public final StringPath unit = createString("unit");
