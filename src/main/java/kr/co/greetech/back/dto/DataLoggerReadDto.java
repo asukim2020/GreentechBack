@@ -16,6 +16,8 @@ public class DataLoggerReadDto {
     String channelName;
     String type;
     String ip;
+    String request;
+    String trigger;
 
     public DataLoggerReadDto(DataLogger dataLogger) {
         id = dataLogger.getId();
@@ -24,5 +26,7 @@ public class DataLoggerReadDto {
         channelName = dataLogger.getChannelName();
         type = dataLogger.getType().toString();
         ip = dataLogger.getIp();
+        request = dataLogger.getRequest();
+        trigger = dataLogger.getTrigger();
     }
 }

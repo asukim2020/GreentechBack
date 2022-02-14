@@ -29,12 +29,18 @@ public class DataLoggerCreateDto {
 
     String ip;
 
+    String request;
+
+    String trigger;
+
     public DataLoggerCreateDto(String modelName, String unit, String channelName) {
         this.modelName = modelName;
         this.unit = unit;
         this.channelName = channelName;
         this.type = DataLoggerType.STATIC;
         this.ip = "";
+        this.request = "";
+        this.trigger = "";
     }
 
     public DataLoggerCreateDto(String modelName, String unit, String channelName, String type) {

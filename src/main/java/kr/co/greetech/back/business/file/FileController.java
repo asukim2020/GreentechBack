@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -38,19 +39,27 @@ public class FileController {
     public void upload(
             @RequestParam MultipartFile file,
             @RequestParam Long dataLoggerId,
+            @RequestParam(required=false) String type,
             HttpServletRequest request
     ) throws FileUploadException {
         String id = getUserName(request);
-        fileService.upload(id, dataLoggerId, file);
+        MeasureFileType fileType = MeasureFileType.DYNAMIC;
+        if (type != null) {
+            if (type.toUpperCase().equals(MeasureFileType.TRIGGER.toString())) {
+                fileType = MeasureFileType.TRIGGER;
+            }
+        }
+
+        fileService.upload(id, dataLoggerId, fileType, file);
     }
 
-    @GetMapping("/{id}/{dataLoggerId}/{fileName:.+}")
-    public ResponseEntity<Resource> download(
-            @PathVariable String id,
+    @GetMapping("/{dataLoggerId}/{fileName:.+}")
+    public ResponseEntity<Resource> downloadId(
             @PathVariable Long dataLoggerId,
             @PathVariable String fileName,
             @NotNull HttpServletRequest request
     ) throws IOException {
+        String id = getUserName(request);
         Resource resource = fileService.download(id, dataLoggerId, fileName);
         String contentType;
         contentType = request
@@ -69,8 +78,6 @@ public class FileController {
                 ).body(resource);
     }
 
-    // TODO: - 파일 검색하는 기능 추가하기
-
     @NotNull
     private String getUserName(@NotNull HttpServletRequest request) {
         final String requestTokenHeader = request.getHeader("Authorization");
@@ -88,10 +95,24 @@ public class FileController {
     @GetMapping("/{dataLoggerId}")
     public Result<List<MeasureFileDto>> list(
             @PathVariable Long dataLoggerId,
+            @RequestParam(required=false) String type,
             HttpServletRequest request
     ) {
         String id = getUserName(request);
-        List<MeasureFileDto> list = fileService.select(id, dataLoggerId, MeasureFileType.TRIGGER);
+        List<MeasureFileDto> list;
+
+        if (type == null) {
+            list = fileService.selectAll(id, dataLoggerId);
+            return new Result<>(list.size(), list);
+        }
+
+        if (type.toUpperCase().equals(MeasureFileType.TRIGGER.toString())) {
+            list = fileService.select(id, dataLoggerId, MeasureFileType.TRIGGER);
+        } else if (type.toUpperCase().equals(MeasureFileType.DYNAMIC.toString())) {
+            list = fileService.select(id, dataLoggerId, MeasureFileType.DYNAMIC);
+        } else {
+            list = fileService.selectAll(id, dataLoggerId);
+        }
         return new Result<>(list.size(), list);
     }
 }

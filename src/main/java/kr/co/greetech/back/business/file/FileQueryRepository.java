@@ -19,6 +19,25 @@ public class FileQueryRepository {
         queryFactory = new JPAQueryFactory(em);
     }
 
+    public List<MeasureFileDto> selectAll(
+            Long companyId,
+            Long dataLoggerId
+    ) {
+        return queryFactory
+                .select(new QMeasureFileDto(
+                        measureFile.createdTime,
+                        measureFile.url,
+                        measureFile.type
+                ))
+                .from(measureFile)
+                .where(
+                        companyIdEq(companyId),
+                        dataLoggerIdEq(dataLoggerId)
+                )
+                .limit(100)
+                .fetch();
+    }
+
     public List<MeasureFileDto> select(
             Long companyId,
             Long dataLoggerId,

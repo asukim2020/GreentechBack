@@ -46,6 +46,12 @@ public class DataLogger extends BaseTimeEntity {
     @Column(length = 50)
     String ip;
 
+    @Column
+    String request;
+
+    @Column
+    String trigger;
+
 //    Boolean isUpdate;
 
     public static DataLogger create(DataLoggerCreateDto dataLoggerCreateDto, Company company) {
@@ -57,6 +63,8 @@ public class DataLogger extends BaseTimeEntity {
         dataLogger.channelName = dataLoggerCreateDto.getChannelName();
         dataLogger.type = dataLoggerCreateDto.getType();
         dataLogger.ip = dataLoggerCreateDto.getIp();
+        dataLogger.request = dataLoggerCreateDto.getRequest();
+        dataLogger.trigger = dataLoggerCreateDto.getTrigger();
 
         return dataLogger;
     }
@@ -80,6 +88,16 @@ public class DataLogger extends BaseTimeEntity {
         String ip = dataLoggerReadDto.getIp();
         if (ip != null && !ip.equals("null")) {
             this.ip = ip;
+        }
+
+        String request = dataLoggerReadDto.getRequest();
+        if (request != null && !request.equals("null")) {
+            this.request = request;
+        }
+
+        String trigger = dataLoggerReadDto.getTrigger();
+        if (trigger != null && !trigger.equals("null")) {
+            this.trigger = trigger;
         }
     }
 }

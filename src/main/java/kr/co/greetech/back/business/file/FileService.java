@@ -60,12 +60,12 @@ public class FileService {
         Files.createDirectories(fileLocation);
     }
 
-    public void upload(String id, Long dataLoggerId, MultipartFile file) throws FileUploadException {
+    public void upload(String id, Long dataLoggerId, MeasureFileType type, MultipartFile file) throws FileUploadException {
         String fileName = getFileName(id, dataLoggerId, file);
         String url = ServletUriComponentsBuilder
                 .fromCurrentContextPath()
                 .path("/file")
-                .path("/" + id)
+//                .path("/" + id)
                 .path("/" + dataLoggerId.toString())
                 .path("/" + fileName)
                 .toUriString();
@@ -77,7 +77,7 @@ public class FileService {
         DataLogger dataLogger = dataLoggerRepository.findById(dataLoggerId)
                 .orElseThrow(() -> new UsernameNotFoundException("Unauthorized"));
 
-        MeasureFile measureFile = MeasureFile.create(url, MeasureFileType.TRIGGER, company, dataLogger);
+        MeasureFile measureFile = MeasureFile.create(url, type, company, dataLogger);
         fileRepository.save(measureFile);
     }
 
@@ -110,5 +110,11 @@ public class FileService {
         Company company = companyRepository.findByLoginId(id)
                 .orElseThrow(() -> new UsernameNotFoundException("Unauthorized"));
         return fileQueryRepository.select(company.getId(), dataLoggerId, type);
+    }
+
+    public List<MeasureFileDto> selectAll(String id, Long dataLoggerId) {
+        Company company = companyRepository.findByLoginId(id)
+                .orElseThrow(() -> new UsernameNotFoundException("Unauthorized"));
+        return fileQueryRepository.selectAll(company.getId(), dataLoggerId);
     }
 }
