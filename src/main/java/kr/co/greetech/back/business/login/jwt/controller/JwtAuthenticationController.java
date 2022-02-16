@@ -45,7 +45,11 @@ public class JwtAuthenticationController {
             throw new IllegalArgumentException(ExceptionMsg.bindingMsg(bindingResult));
         }
 
-        return userDetailsService.create(companyCreateDto);
+        try {
+            return userDetailsService.create(companyCreateDto);
+        } catch(Exception e) {
+            throw new IllegalArgumentException("이름 또는 아이디가 중복됩니다.");
+        }
     }
 
     @PostMapping(value = "/login")
